@@ -10,7 +10,7 @@
 | resource: 🚚         | resource      | 코드를 변경하지 않고 리소스 추가 & 변경 | 이미지, 컬러 asset 추가                        |
 | art: 🎨              | style         | 코드 스타일 수정                        |                                                |
 | iphone: 📱           | design        | UI 관련 코드 수정                       |                                                |
-| docs: 📝             | documentation | 문서수정                                | 예. readme                                     |
+| memo: 📝             | documentation | 문서수정                                | 예. readme                                     |
 | bug: 🐛              | bug           | 버그 수정                               |                                                |
 | recycle: ♻️          | refactor      | 코드 개선                               |                                                |
 | white_check_mark: ✅ | test          | test 코드 작성 & 수정                   |                                                |
