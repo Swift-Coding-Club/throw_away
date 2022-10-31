@@ -17,6 +17,9 @@ struct AddObjectView: View {
     @State private var objectName: String = ""
     @State private var objectDescription: String = ""
     
+    @State private var showDatePicker: Bool = false
+    @State private var selectedDate: Date = Date()
+    
     private let gray112: Color = Color(red: 112/255, green: 112/255, blue: 112/255)
     private let borderColor: Color = Color(red: 231/255, green: 231/255, blue: 231/255)
     
@@ -50,6 +53,26 @@ struct AddObjectView: View {
                     .padding(13)
                     .overlay(Rectangle().stroke(borderColor, lineWidth: 1))
                     .padding(.bottom, 42)
+                
+                Text("비움날")
+                    .foregroundColor(gray112)
+                    .font(.system(size: 12))
+                
+                HStack(spacing: 20) {
+                    Image("calendar")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                    
+                    DatePicker("", selection: $selectedDate, displayedComponents: [.date])
+                        .labelsHidden()
+                        .accentColor(.green)
+                        .environment(\.locale, Locale.init(identifier: "ko_KR"))
+                }
+                .frame(height: 40)
+                .padding(.vertical, 6)
+                .padding(.horizontal, 13)
+                .frame(maxWidth: UIScreen.main.bounds.width, alignment: .leading)
+                .overlay(Rectangle().stroke(borderColor, lineWidth: 1))
             }
             
             Spacer()
