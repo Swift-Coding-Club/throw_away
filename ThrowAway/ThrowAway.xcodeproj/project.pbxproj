@@ -7,26 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C6EFB9D12903AAF700C53743 /* ThrowAwayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9D02903AAF700C53743 /* ThrowAwayApp.swift */; };
-		C6EFB9D32903AAF700C53743 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9D22903AAF700C53743 /* ContentView.swift */; };
-		C6EFB9D52903AAFA00C53743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6EFB9D42903AAFA00C53743 /* Assets.xcassets */; };
-		C6EFB9D82903AAFA00C53743 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6EFB9D72903AAFA00C53743 /* Preview Assets.xcassets */; };
-		C6EFB9DA2903AAFA00C53743 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9D92903AAFA00C53743 /* Persistence.swift */; };
-		C6EFB9DD2903AAFA00C53743 /* ThrowAway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9DB2903AAFA00C53743 /* ThrowAway.xcdatamodeld */; };
+		3AC5CB782912B2D800BA2A11 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC5CB772912B2D800BA2A11 /* TabBarViewController.swift */; };
+		3AE4E65429110AD3004BC324 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4E65329110AD3004BC324 /* AppDelegate.swift */; };
+		3AE4E65629110AD3004BC324 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE4E65529110AD3004BC324 /* SceneDelegate.swift */; };
+		3AE4E65D29110AD3004BC324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AE4E65C29110AD3004BC324 /* Assets.xcassets */; };
+		3AE4E66029110AD3004BC324 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE4E65E29110AD3004BC324 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C6EFB9CD2903AAF700C53743 /* ThrowAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrowAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6EFB9D02903AAF700C53743 /* ThrowAwayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowAwayApp.swift; sourceTree = "<group>"; };
-		C6EFB9D22903AAF700C53743 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C6EFB9D42903AAFA00C53743 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C6EFB9D72903AAFA00C53743 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C6EFB9D92903AAFA00C53743 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		C6EFB9DC2903AAFA00C53743 /* ThrowAway.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ThrowAway.xcdatamodel; sourceTree = "<group>"; };
+		3AC5CB772912B2D800BA2A11 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		3AE4E65029110AD3004BC324 /* ThrowAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrowAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AE4E65329110AD3004BC324 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3AE4E65529110AD3004BC324 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3AE4E65C29110AD3004BC324 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AE4E65F29110AD3004BC324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3AE4E66129110AD3004BC324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C6EFB9CA2903AAF700C53743 /* Frameworks */ = {
+		3AE4E64D29110AD3004BC324 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,53 +35,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C6EFB9C42903AAF700C53743 = {
+		3AE4E64729110AD3004BC324 = {
 			isa = PBXGroup;
 			children = (
-				C6EFB9CF2903AAF700C53743 /* ThrowAway */,
-				C6EFB9CE2903AAF700C53743 /* Products */,
+				3AE4E65229110AD3004BC324 /* ThrowAway */,
+				3AE4E65129110AD3004BC324 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C6EFB9CE2903AAF700C53743 /* Products */ = {
+		3AE4E65129110AD3004BC324 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C6EFB9CD2903AAF700C53743 /* ThrowAway.app */,
+				3AE4E65029110AD3004BC324 /* ThrowAway.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C6EFB9CF2903AAF700C53743 /* ThrowAway */ = {
+		3AE4E65229110AD3004BC324 /* ThrowAway */ = {
 			isa = PBXGroup;
 			children = (
-				C6EFB9D02903AAF700C53743 /* ThrowAwayApp.swift */,
-				C6EFB9D22903AAF700C53743 /* ContentView.swift */,
-				C6EFB9D42903AAFA00C53743 /* Assets.xcassets */,
-				C6EFB9D92903AAFA00C53743 /* Persistence.swift */,
-				C6EFB9DB2903AAFA00C53743 /* ThrowAway.xcdatamodeld */,
-				C6EFB9D62903AAFA00C53743 /* Preview Content */,
+				3AE4E66729110D55004BC324 /* screen */,
+				3AE4E65329110AD3004BC324 /* AppDelegate.swift */,
+				3AE4E65529110AD3004BC324 /* SceneDelegate.swift */,
+				3AE4E65C29110AD3004BC324 /* Assets.xcassets */,
+				3AE4E65E29110AD3004BC324 /* LaunchScreen.storyboard */,
+				3AE4E66129110AD3004BC324 /* Info.plist */,
 			);
 			path = ThrowAway;
 			sourceTree = "<group>";
 		};
-		C6EFB9D62903AAFA00C53743 /* Preview Content */ = {
+		3AE4E66729110D55004BC324 /* screen */ = {
 			isa = PBXGroup;
 			children = (
-				C6EFB9D72903AAFA00C53743 /* Preview Assets.xcassets */,
+				3AC5CB772912B2D800BA2A11 /* TabBarViewController.swift */,
 			);
-			path = "Preview Content";
+			path = screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C6EFB9CC2903AAF700C53743 /* ThrowAway */ = {
+		3AE4E64F29110AD3004BC324 /* ThrowAway */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C6EFB9E02903AAFA00C53743 /* Build configuration list for PBXNativeTarget "ThrowAway" */;
+			buildConfigurationList = 3AE4E66429110AD3004BC324 /* Build configuration list for PBXNativeTarget "ThrowAway" */;
 			buildPhases = (
-				C6EFB9C92903AAF700C53743 /* Sources */,
-				C6EFB9CA2903AAF700C53743 /* Frameworks */,
-				C6EFB9CB2903AAF700C53743 /* Resources */,
+				3AE4E64C29110AD3004BC324 /* Sources */,
+				3AE4E64D29110AD3004BC324 /* Frameworks */,
+				3AE4E64E29110AD3004BC324 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -90,71 +89,80 @@
 			);
 			name = ThrowAway;
 			productName = ThrowAway;
-			productReference = C6EFB9CD2903AAF700C53743 /* ThrowAway.app */;
+			productReference = 3AE4E65029110AD3004BC324 /* ThrowAway.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C6EFB9C52903AAF700C53743 /* Project object */ = {
+		3AE4E64829110AD3004BC324 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
-					C6EFB9CC2903AAF700C53743 = {
-						CreatedOnToolsVersion = 14.0;
+					3AE4E64F29110AD3004BC324 = {
+						CreatedOnToolsVersion = 14.0.1;
 					};
 				};
 			};
-			buildConfigurationList = C6EFB9C82903AAF700C53743 /* Build configuration list for PBXProject "ThrowAway" */;
+			buildConfigurationList = 3AE4E64B29110AD3004BC324 /* Build configuration list for PBXProject "ThrowAway" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
-				ko,
 			);
-			mainGroup = C6EFB9C42903AAF700C53743;
-			productRefGroup = C6EFB9CE2903AAF700C53743 /* Products */;
+			mainGroup = 3AE4E64729110AD3004BC324;
+			productRefGroup = 3AE4E65129110AD3004BC324 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C6EFB9CC2903AAF700C53743 /* ThrowAway */,
+				3AE4E64F29110AD3004BC324 /* ThrowAway */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C6EFB9CB2903AAF700C53743 /* Resources */ = {
+		3AE4E64E29110AD3004BC324 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6EFB9D82903AAFA00C53743 /* Preview Assets.xcassets in Resources */,
-				C6EFB9D52903AAFA00C53743 /* Assets.xcassets in Resources */,
+				3AE4E66029110AD3004BC324 /* LaunchScreen.storyboard in Resources */,
+				3AE4E65D29110AD3004BC324 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C6EFB9C92903AAF700C53743 /* Sources */ = {
+		3AE4E64C29110AD3004BC324 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6EFB9DD2903AAFA00C53743 /* ThrowAway.xcdatamodeld in Sources */,
-				C6EFB9DA2903AAFA00C53743 /* Persistence.swift in Sources */,
-				C6EFB9D32903AAF700C53743 /* ContentView.swift in Sources */,
-				C6EFB9D12903AAF700C53743 /* ThrowAwayApp.swift in Sources */,
+				3AC5CB782912B2D800BA2A11 /* TabBarViewController.swift in Sources */,
+				3AE4E65429110AD3004BC324 /* AppDelegate.swift in Sources */,
+				3AE4E65629110AD3004BC324 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		3AE4E65E29110AD3004BC324 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AE4E65F29110AD3004BC324 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		C6EFB9DE2903AAFA00C53743 /* Debug */ = {
+		3AE4E66229110AD3004BC324 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -204,7 +212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -214,7 +222,7 @@
 			};
 			name = Debug;
 		};
-		C6EFB9DF2903AAFA00C53743 /* Release */ = {
+		3AE4E66329110AD3004BC324 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -258,7 +266,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -268,29 +276,28 @@
 			};
 			name = Release;
 		};
-		C6EFB9E12903AAFA00C53743 /* Debug */ = {
+		3AE4E66529110AD3004BC324 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ThrowAway/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
+				DEVELOPMENT_TEAM = 39Q9GA8PN8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = ThrowAway/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ThrowAway;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ddugibab.ThrowAway;
+				PRODUCT_BUNDLE_IDENTIFIER = sunmi.ThrowAway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -301,29 +308,28 @@
 			};
 			name = Debug;
 		};
-		C6EFB9E22903AAFA00C53743 /* Release */ = {
+		3AE4E66629110AD3004BC324 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ThrowAway/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
+				DEVELOPMENT_TEAM = 39Q9GA8PN8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = ThrowAway/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ThrowAway;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ddugibab.ThrowAway;
+				PRODUCT_BUNDLE_IDENTIFIER = sunmi.ThrowAway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -337,38 +343,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C6EFB9C82903AAF700C53743 /* Build configuration list for PBXProject "ThrowAway" */ = {
+		3AE4E64B29110AD3004BC324 /* Build configuration list for PBXProject "ThrowAway" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C6EFB9DE2903AAFA00C53743 /* Debug */,
-				C6EFB9DF2903AAFA00C53743 /* Release */,
+				3AE4E66229110AD3004BC324 /* Debug */,
+				3AE4E66329110AD3004BC324 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6EFB9E02903AAFA00C53743 /* Build configuration list for PBXNativeTarget "ThrowAway" */ = {
+		3AE4E66429110AD3004BC324 /* Build configuration list for PBXNativeTarget "ThrowAway" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C6EFB9E12903AAFA00C53743 /* Debug */,
-				C6EFB9E22903AAFA00C53743 /* Release */,
+				3AE4E66529110AD3004BC324 /* Debug */,
+				3AE4E66629110AD3004BC324 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		C6EFB9DB2903AAFA00C53743 /* ThrowAway.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C6EFB9DC2903AAFA00C53743 /* ThrowAway.xcdatamodel */,
-			);
-			currentVersion = C6EFB9DC2903AAFA00C53743 /* ThrowAway.xcdatamodel */;
-			path = ThrowAway.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = C6EFB9C52903AAF700C53743 /* Project object */;
+	rootObject = 3AE4E64829110AD3004BC324 /* Project object */;
 }
