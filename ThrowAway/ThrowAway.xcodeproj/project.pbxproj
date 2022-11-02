@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C686F5DC29101C6B0057BB0D /* AddObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686F5DB29101C6B0057BB0D /* AddObjectView.swift */; };
+		C686F5E12910215A0057BB0D /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686F5E02910215A0057BB0D /* PhotoPicker.swift */; };
 		C6EFB9D12903AAF700C53743 /* ThrowAwayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9D02903AAF700C53743 /* ThrowAwayApp.swift */; };
 		C6EFB9D32903AAF700C53743 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9D22903AAF700C53743 /* ContentView.swift */; };
 		C6EFB9D52903AAFA00C53743 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6EFB9D42903AAFA00C53743 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C686F5DB29101C6B0057BB0D /* AddObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectView.swift; sourceTree = "<group>"; };
+		C686F5E02910215A0057BB0D /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		C6EFB9CD2903AAF700C53743 /* ThrowAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrowAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EFB9D02903AAF700C53743 /* ThrowAwayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowAwayApp.swift; sourceTree = "<group>"; };
 		C6EFB9D22903AAF700C53743 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +40,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C686F5DF291021450057BB0D /* AddObject */ = {
+			isa = PBXGroup;
+			children = (
+				C686F5DB29101C6B0057BB0D /* AddObjectView.swift */,
+				C686F5E02910215A0057BB0D /* PhotoPicker.swift */,
+			);
+			path = AddObject;
+			sourceTree = "<group>";
+		};
 		C6EFB9C42903AAF700C53743 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +73,7 @@
 				C6EFB9D42903AAFA00C53743 /* Assets.xcassets */,
 				C6EFB9D92903AAFA00C53743 /* Persistence.swift */,
 				C6EFB9DB2903AAFA00C53743 /* ThrowAway.xcdatamodeld */,
+				C686F5DF291021450057BB0D /* AddObject */,
 				C6EFB9D62903AAFA00C53743 /* Preview Content */,
 			);
 			path = ThrowAway;
@@ -147,6 +161,8 @@
 				C6EFB9DD2903AAFA00C53743 /* ThrowAway.xcdatamodeld in Sources */,
 				C6EFB9DA2903AAFA00C53743 /* Persistence.swift in Sources */,
 				C6EFB9D32903AAF700C53743 /* ContentView.swift in Sources */,
+				C686F5E12910215A0057BB0D /* PhotoPicker.swift in Sources */,
+				C686F5DC29101C6B0057BB0D /* AddObjectView.swift in Sources */,
 				C6EFB9D12903AAF700C53743 /* ThrowAwayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +300,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,7 +333,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
