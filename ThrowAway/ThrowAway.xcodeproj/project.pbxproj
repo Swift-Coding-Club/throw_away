@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		98CDC75B2915C27B00556D06 /* ThrowAwayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CDC75A2915C27B00556D06 /* ThrowAwayTests.swift */; };
+		98CDC7662915C92100556D06 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9D92903AAFA00C53743 /* Persistence.swift */; };
+		98CDC7672915C93100556D06 /* ThrowAway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9DB2903AAFA00C53743 /* ThrowAway.xcdatamodeld */; };
+		98CDC76A2915CD1400556D06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6EFB9D42903AAFA00C53743 /* Assets.xcassets */; };
+		98CDC7732915D0D900556D06 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CDC7712915D0D900556D06 /* Product+CoreDataClass.swift */; };
+		98CDC7742915D0D900556D06 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CDC7712915D0D900556D06 /* Product+CoreDataClass.swift */; };
+		98CDC7752915D0D900556D06 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CDC7722915D0D900556D06 /* Product+CoreDataProperties.swift */; };
+		98CDC7762915D0D900556D06 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CDC7722915D0D900556D06 /* Product+CoreDataProperties.swift */; };
 		C686F5DC29101C6B0057BB0D /* AddObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686F5DB29101C6B0057BB0D /* AddObjectView.swift */; };
 		C686F5E12910215A0057BB0D /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686F5E02910215A0057BB0D /* PhotoPicker.swift */; };
 		C6EFB9D12903AAF700C53743 /* ThrowAwayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9D02903AAF700C53743 /* ThrowAwayApp.swift */; };
@@ -31,6 +38,8 @@
 /* Begin PBXFileReference section */
 		98CDC7582915C27B00556D06 /* ThrowAwayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThrowAwayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98CDC75A2915C27B00556D06 /* ThrowAwayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowAwayTests.swift; sourceTree = "<group>"; };
+		98CDC7712915D0D900556D06 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
+		98CDC7722915D0D900556D06 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C686F5DB29101C6B0057BB0D /* AddObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectView.swift; sourceTree = "<group>"; };
 		C686F5E02910215A0057BB0D /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		C6EFB9CD2903AAF700C53743 /* ThrowAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrowAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +89,8 @@
 		C6EFB9C42903AAF700C53743 = {
 			isa = PBXGroup;
 			children = (
+				98CDC7712915D0D900556D06 /* Product+CoreDataClass.swift */,
+				98CDC7722915D0D900556D06 /* Product+CoreDataProperties.swift */,
 				C6EFB9CF2903AAF700C53743 /* ThrowAway */,
 				98CDC7592915C27B00556D06 /* ThrowAwayTests */,
 				C6EFB9CE2903AAF700C53743 /* Products */,
@@ -199,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98CDC76A2915CD1400556D06 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +230,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98CDC7762915D0D900556D06 /* Product+CoreDataProperties.swift in Sources */,
+				98CDC7662915C92100556D06 /* Persistence.swift in Sources */,
+				98CDC7672915C93100556D06 /* ThrowAway.xcdatamodeld in Sources */,
 				98CDC75B2915C27B00556D06 /* ThrowAwayTests.swift in Sources */,
+				98CDC7742915D0D900556D06 /* Product+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,8 +245,10 @@
 				C6EFB9DD2903AAFA00C53743 /* ThrowAway.xcdatamodeld in Sources */,
 				C6EFB9DA2903AAFA00C53743 /* Persistence.swift in Sources */,
 				C6EFB9D32903AAF700C53743 /* ContentView.swift in Sources */,
+				98CDC7732915D0D900556D06 /* Product+CoreDataClass.swift in Sources */,
 				C686F5E12910215A0057BB0D /* PhotoPicker.swift in Sources */,
 				C686F5DC29101C6B0057BB0D /* AddObjectView.swift in Sources */,
+				98CDC7752915D0D900556D06 /* Product+CoreDataProperties.swift in Sources */,
 				C6EFB9D12903AAF700C53743 /* ThrowAwayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
