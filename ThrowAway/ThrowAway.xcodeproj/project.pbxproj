@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -115,7 +115,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					C6EFB9CC2903AAF700C53743 = {
 						CreatedOnToolsVersion = 14.0;
@@ -123,7 +123,7 @@
 				};
 			};
 			buildConfigurationList = C6EFB9C82903AAF700C53743 /* Build configuration list for PBXProject "ThrowAway" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
