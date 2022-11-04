@@ -4,10 +4,9 @@
         <attribute name="cleaningDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="memo" optional="YES" attributeType="String"/>
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Product" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="Product" positionX="-63" positionY="-18" width="128" height="89"/>
     </elements>
 </model>

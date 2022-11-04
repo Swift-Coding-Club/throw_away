@@ -16,7 +16,6 @@ extension Product {
         return NSFetchRequest<Product>(entityName: "Product")
     }
 
-    @NSManaged public var timestamp: Date?
     @NSManaged public var title: String?
     @NSManaged public var memo: String?
     @NSManaged public var cleaningDay: Date?
