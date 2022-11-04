@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C686F5DC29101C6B0057BB0D /* AddObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686F5DB29101C6B0057BB0D /* AddObjectView.swift */; };
 		C686F5E12910215A0057BB0D /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686F5E02910215A0057BB0D /* PhotoPicker.swift */; };
+		980200762913B0C000E193E6 /* DateScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980200752913B0C000E193E6 /* DateScrollView.swift */; };
+		980200782913B1D200E193E6 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980200772913B1D200E193E6 /* CalendarHelper.swift */; };
+		98CFE30F29102E11004B2FA1 /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CFE30E29102E11004B2FA1 /* DateHolder.swift */; };
 		98E899B8290E0565001245C4 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E899B7290E0565001245C4 /* StatisticsView.swift */; };
 		C6EFB9D12903AAF700C53743 /* ThrowAwayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9D02903AAF700C53743 /* ThrowAwayApp.swift */; };
 		C6EFB9D32903AAF700C53743 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9D22903AAF700C53743 /* ContentView.swift */; };
@@ -21,6 +24,9 @@
 /* Begin PBXFileReference section */
 		C686F5DB29101C6B0057BB0D /* AddObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectView.swift; sourceTree = "<group>"; };
 		C686F5E02910215A0057BB0D /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		980200752913B0C000E193E6 /* DateScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScrollView.swift; sourceTree = "<group>"; };
+		980200772913B1D200E193E6 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		98CFE30E29102E11004B2FA1 /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
 		98E899B7290E0565001245C4 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		C6EFB9CD2903AAF700C53743 /* ThrowAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrowAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6EFB9D02903AAF700C53743 /* ThrowAwayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowAwayApp.swift; sourceTree = "<group>"; };
@@ -49,6 +55,14 @@
 				C686F5E02910215A0057BB0D /* PhotoPicker.swift */,
 			);
 			path = AddObject;
+		980200742913B0A900E193E6 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				98CFE30E29102E11004B2FA1 /* DateHolder.swift */,
+				980200752913B0C000E193E6 /* DateScrollView.swift */,
+				980200772913B1D200E193E6 /* CalendarHelper.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		C6EFB9C42903AAF700C53743 = {
@@ -73,6 +87,7 @@
 				C6EFB9D02903AAF700C53743 /* ThrowAwayApp.swift */,
 				C6EFB9D22903AAF700C53743 /* ContentView.swift */,
 				98E899B7290E0565001245C4 /* StatisticsView.swift */,
+				980200742913B0A900E193E6 /* Calendar */,
 				C6EFB9D42903AAFA00C53743 /* Assets.xcassets */,
 				C6EFB9D92903AAFA00C53743 /* Persistence.swift */,
 				C6EFB9DB2903AAFA00C53743 /* ThrowAway.xcdatamodeld */,
@@ -162,11 +177,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6EFB9DD2903AAFA00C53743 /* ThrowAway.xcdatamodeld in Sources */,
+				980200782913B1D200E193E6 /* CalendarHelper.swift in Sources */,
+				98CFE30F29102E11004B2FA1 /* DateHolder.swift in Sources */,
 				98E899B8290E0565001245C4 /* StatisticsView.swift in Sources */,
 				C6EFB9DA2903AAFA00C53743 /* Persistence.swift in Sources */,
 				C6EFB9D32903AAF700C53743 /* ContentView.swift in Sources */,
 				C686F5E12910215A0057BB0D /* PhotoPicker.swift in Sources */,
 				C686F5DC29101C6B0057BB0D /* AddObjectView.swift in Sources */,
+				980200762913B0C000E193E6 /* DateScrollView.swift in Sources */,
 				C6EFB9D12903AAF700C53743 /* ThrowAwayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

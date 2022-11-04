@@ -10,13 +10,16 @@ import SwiftUI
 struct StatisticsView: View {
     var notThrowArray = ["Test01", "Test02", "Test03", "Test04"]
     var lateThrowArray = ["Test01", "Test02", "Test03"]
-    let setWidth = UIScreen.main.bounds.width
+    let screenWidth = UIScreen.main.bounds.width
     
     @EnvironmentObject var dateHolder: DateHolder
     
     var body: some View {
         
         VStack {
+            DateScrollView()
+                .environmentObject(dateHolder)
+            
             Text("이번 달의 달성도는 81%입니다.")
                 .padding(.top, 20)
                 .font(.system(size: 20))
@@ -24,7 +27,7 @@ struct StatisticsView: View {
             // TODO: - Rectangle = 달력 위치
             
             Rectangle()
-                .size(width: setWidth, height: setWidth)
+                .size(width: screenWidth, height: screenWidth)
             
             ProductArrayView(text: "버리지 못한 물건", productArray: notThrowArray)
             ProductArrayView(text: "늦게 버린 물건", productArray: lateThrowArray)
@@ -50,12 +53,12 @@ struct StatisticsView: View {
             HStack {
                 ForEach(productArray, id: \.self) {product in
                     Image(product)
-                        .frame(width: setWidth / 6, height: setWidth / 6, alignment: .center)
+                        .frame(width: screenWidth / 6, height: screenWidth / 6, alignment: .center)
                         .clipShape(Circle())
                 }
             }
         }
-    }
+    }   
 }
 
 struct StatisticsView_Previews: PreviewProvider {
