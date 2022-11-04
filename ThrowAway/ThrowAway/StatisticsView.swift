@@ -21,13 +21,13 @@ struct StatisticsView: View {
                 .environmentObject(dateHolder)
             
             Text("이번 달의 달성도는 81%입니다.")
-                .padding(.top, 20)
+                .padding(.vertical, 20)
                 .font(.system(size: 20))
             
             // TODO: - Rectangle = 달력 위치
             
-            Rectangle()
-                .size(width: screenWidth, height: screenWidth)
+            DayOfWeekView()
+            CalendarView()
             
             ProductArrayView(text: "버리지 못한 물건", productArray: notThrowArray)
             ProductArrayView(text: "늦게 버린 물건", productArray: lateThrowArray)
