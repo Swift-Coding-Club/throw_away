@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -59,8 +59,6 @@
 			children = (
 				980200862916326D00E193E6 /* CalendarManager.swift */,
 				980200952916359200E193E6 /* Model */,
-				9802008F2916338D00E193E6 /* DateHolder.swift */,
-				98020089291632B400E193E6 /* Month.swift */,
 				98020096291635D900E193E6 /* View */,
 			);
 			path = StatisticsView;
@@ -69,6 +67,8 @@
 		980200952916359200E193E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9802008F2916338D00E193E6 /* DateHolder.swift */,
+				98020089291632B400E193E6 /* Month.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 				};
 			};
 			buildConfigurationList = C6EFB9C82903AAF700C53743 /* Build configuration list for PBXProject "ThrowAway" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
