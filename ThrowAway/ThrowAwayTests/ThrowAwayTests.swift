@@ -51,4 +51,30 @@ class ThrowAwayTests: XCTestCase {
         }
     }
     
+    func testCoreData_deleteProduct_byTitle() throws {
+        let deleteTitle = "testTitle"
+        let viewContext = sut.container.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Product")
+        fetchRequest.predicate = NSPredicate(format: "title = %@", deleteTitle)
+        let fetchResults = try viewContext.fetch(fetchRequest)
+        let objectToDelete = fetchResults[0] as! NSManagedObject
+        viewContext.delete(objectToDelete)
+        
+        do {
+            try viewContext.save()
+        } catch {
+            XCTFail("Fail delete Item by title")
+        }
+    }
+    
+    func testCoreData_deleteAll() throws {
+        let viewContext = sut.container.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+        do {
+            try viewContext.execute(deleteRequest)
+        } catch {
+            XCTFail("Fail delete all")
+        }
+    }
 }
