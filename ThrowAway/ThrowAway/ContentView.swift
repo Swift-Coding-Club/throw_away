@@ -21,9 +21,9 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.cleaningDay!, formatter: itemFormatter)")
+                        Text("Item at \(item.cleaningDay ?? Date(), formatter: itemFormatter)")
                     } label: {
-                        Text(item.cleaningDay!, formatter: itemFormatter)
+                        Text(item.cleaningDay ?? Date(), formatter: itemFormatter)
                     }
                 }
                 .onDelete(perform: deleteItems)
