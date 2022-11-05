@@ -6,30 +6,58 @@
 //
 
 import XCTest
+import CoreData
 
 class ThrowAwayTests: XCTestCase {
+    var sut: PersistenceController!
+        override func setUpWithError() throws {
+            try super.setUpWithError()
+            self.sut = PersistenceController.shared
+        }
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+        override func tearDownWithError() throws {
+            try super.tearDownWithError()
+            self.sut = nil
+        }
+        
+        func testCoreData_whenAddProduct() throws {
+            let viewContext = sut.container.viewContext
+            let newItem = Product(context: viewContext)
+            newItem.memo = "this is test data"
+            newItem.title = "testTitle"
+            newItem.cleaningDay = Date()
+            do {
+                try viewContext.save()
+            } catch {
+                XCTFail("Fail add Item to database")
+            }
+        }
+    
+    func testCoreData_updateProduct_byTitle() throws {
+        let viewContext = sut.container.viewContext
+        let updateTargetTitle = "testTitle"
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Product")
+        fetchRequest.predicate = NSPredicate(format: "title = %@", updateTargetTitle)
+        
+        do {
+            let fetchResults = try viewContext.fetch(fetchRequest)
+            let updatedObject = fetchResults[0] as! NSManagedObject
+            updatedObject.setValue("updated Title", forKey: "title")
+            updatedObject.setValue("updated memo", forKey: "memo")
+            try viewContext.save()
+        } catch {
+            XCTFail("Fail update Item by title")
         }
     }
-
+    
+    func testCoreData_deleteAll() throws {
+        let viewContext = sut.container.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+        do {
+            try viewContext.execute(deleteRequest)
+        } catch {
+            XCTFail("Fail delete all")
+        }
+    }
 }
