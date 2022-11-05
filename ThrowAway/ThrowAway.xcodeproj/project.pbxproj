@@ -14,6 +14,8 @@
 		980200902916338D00E193E6 /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9802008F2916338D00E193E6 /* DateHolder.swift */; };
 		98020092291633A700E193E6 /* DateScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98020091291633A700E193E6 /* DateScrollView.swift */; };
 		980200942916343600E193E6 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980200932916343600E193E6 /* StatisticsView.swift */; };
+		9805138E2916477E00A4E9BD /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9805138C2916477E00A4E9BD /* Product+CoreDataClass.swift */; };
+		9805138F2916477E00A4E9BD /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9805138D2916477E00A4E9BD /* Product+CoreDataProperties.swift */; };
 		C686F5DC29101C6B0057BB0D /* AddObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686F5DB29101C6B0057BB0D /* AddObjectView.swift */; };
 		C686F5E12910215A0057BB0D /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686F5E02910215A0057BB0D /* PhotoPicker.swift */; };
 		C6EFB9D12903AAF700C53743 /* ThrowAwayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9D02903AAF700C53743 /* ThrowAwayApp.swift */; };
@@ -32,6 +34,8 @@
 		9802008F2916338D00E193E6 /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
 		98020091291633A700E193E6 /* DateScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScrollView.swift; sourceTree = "<group>"; };
 		980200932916343600E193E6 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		9805138C2916477E00A4E9BD /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9805138D2916477E00A4E9BD /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C686F5DB29101C6B0057BB0D /* AddObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectView.swift; sourceTree = "<group>"; };
 		C686F5E02910215A0057BB0D /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		C6EFB9CD2903AAF700C53743 /* ThrowAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrowAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +100,8 @@
 		C6EFB9C42903AAF700C53743 = {
 			isa = PBXGroup;
 			children = (
+				9805138C2916477E00A4E9BD /* Product+CoreDataClass.swift */,
+				9805138D2916477E00A4E9BD /* Product+CoreDataProperties.swift */,
 				C6EFB9CF2903AAF700C53743 /* ThrowAway */,
 				C6EFB9CE2903AAF700C53743 /* Products */,
 			);
@@ -206,7 +212,9 @@
 				C6EFB9DD2903AAFA00C53743 /* ThrowAway.xcdatamodeld in Sources */,
 				C6EFB9DA2903AAFA00C53743 /* Persistence.swift in Sources */,
 				C6EFB9D32903AAF700C53743 /* ContentView.swift in Sources */,
+				9805138E2916477E00A4E9BD /* Product+CoreDataClass.swift in Sources */,
 				98020092291633A700E193E6 /* DateScrollView.swift in Sources */,
+				9805138F2916477E00A4E9BD /* Product+CoreDataProperties.swift in Sources */,
 				980200872916326D00E193E6 /* CalendarManager.swift in Sources */,
 				980200942916343600E193E6 /* StatisticsView.swift in Sources */,
 				9802008C291632E800E193E6 /* CalendarView.swift in Sources */,
