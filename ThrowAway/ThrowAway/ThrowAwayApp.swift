@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct ThrowAwayApp: App {
     let persistenceController = PersistenceController.shared
+    let dateHolder = DateHolder()
 
     var body: some Scene {
         WindowGroup {

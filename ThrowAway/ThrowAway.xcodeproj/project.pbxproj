@@ -12,9 +12,14 @@
 		98CDC7672915C93100556D06 /* ThrowAway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9DB2903AAFA00C53743 /* ThrowAway.xcdatamodeld */; };
 		98CDC76A2915CD1400556D06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6EFB9D42903AAFA00C53743 /* Assets.xcassets */; };
 		98CDC7732915D0D900556D06 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CDC7712915D0D900556D06 /* Product+CoreDataClass.swift */; };
-		98CDC7742915D0D900556D06 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CDC7712915D0D900556D06 /* Product+CoreDataClass.swift */; };
 		98CDC7752915D0D900556D06 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CDC7722915D0D900556D06 /* Product+CoreDataProperties.swift */; };
-		98CDC7762915D0D900556D06 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CDC7722915D0D900556D06 /* Product+CoreDataProperties.swift */; };
+		980200872916326D00E193E6 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980200862916326D00E193E6 /* CalendarManager.swift */; };
+		9802008A291632B400E193E6 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98020089291632B400E193E6 /* Month.swift */; };
+		9802008C291632E800E193E6 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9802008B291632E800E193E6 /* CalendarView.swift */; };
+		9802008E2916331F00E193E6 /* DayOfWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9802008D2916331F00E193E6 /* DayOfWeekView.swift */; };
+		980200902916338D00E193E6 /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9802008F2916338D00E193E6 /* DateHolder.swift */; };
+		98020092291633A700E193E6 /* DateScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98020091291633A700E193E6 /* DateScrollView.swift */; };
+		980200942916343600E193E6 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980200932916343600E193E6 /* StatisticsView.swift */; };
 		C686F5DC29101C6B0057BB0D /* AddObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686F5DB29101C6B0057BB0D /* AddObjectView.swift */; };
 		C686F5E12910215A0057BB0D /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686F5E02910215A0057BB0D /* PhotoPicker.swift */; };
 		C6EFB9D12903AAF700C53743 /* ThrowAwayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9D02903AAF700C53743 /* ThrowAwayApp.swift */; };
@@ -40,6 +45,13 @@
 		98CDC75A2915C27B00556D06 /* ThrowAwayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowAwayTests.swift; sourceTree = "<group>"; };
 		98CDC7712915D0D900556D06 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
 		98CDC7722915D0D900556D06 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		980200862916326D00E193E6 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		98020089291632B400E193E6 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		9802008B291632E800E193E6 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		9802008D2916331F00E193E6 /* DayOfWeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOfWeekView.swift; sourceTree = "<group>"; };
+		9802008F2916338D00E193E6 /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
+		98020091291633A700E193E6 /* DateScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScrollView.swift; sourceTree = "<group>"; };
+		980200932916343600E193E6 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		C686F5DB29101C6B0057BB0D /* AddObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectView.swift; sourceTree = "<group>"; };
 		C686F5E02910215A0057BB0D /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		C6EFB9CD2903AAF700C53743 /* ThrowAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrowAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +87,34 @@
 				98CDC75A2915C27B00556D06 /* ThrowAwayTests.swift */,
 			);
 			path = ThrowAwayTests;
+		980200882916327300E193E6 /* StatisticsView */ = {
+			isa = PBXGroup;
+			children = (
+				980200862916326D00E193E6 /* CalendarManager.swift */,
+				980200952916359200E193E6 /* Model */,
+				9802008F2916338D00E193E6 /* DateHolder.swift */,
+				98020089291632B400E193E6 /* Month.swift */,
+				98020096291635D900E193E6 /* View */,
+			);
+			path = StatisticsView;
+			sourceTree = "<group>";
+		};
+		980200952916359200E193E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		98020096291635D900E193E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				980200932916343600E193E6 /* StatisticsView.swift */,
+				9802008B291632E800E193E6 /* CalendarView.swift */,
+				98020091291633A700E193E6 /* DateScrollView.swift */,
+				9802008D2916331F00E193E6 /* DayOfWeekView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C686F5DF291021450057BB0D /* AddObject */ = {
@@ -113,6 +153,7 @@
 				C6EFB9D22903AAF700C53743 /* ContentView.swift */,
 				C6EFB9D42903AAFA00C53743 /* Assets.xcassets */,
 				C6EFB9D92903AAFA00C53743 /* Persistence.swift */,
+				980200882916327300E193E6 /* StatisticsView */,
 				C6EFB9DB2903AAFA00C53743 /* ThrowAway.xcdatamodeld */,
 				C686F5DF291021450057BB0D /* AddObject */,
 				C6EFB9D62903AAFA00C53743 /* Preview Content */,
@@ -249,6 +290,15 @@
 				C686F5E12910215A0057BB0D /* PhotoPicker.swift in Sources */,
 				C686F5DC29101C6B0057BB0D /* AddObjectView.swift in Sources */,
 				98CDC7752915D0D900556D06 /* Product+CoreDataProperties.swift in Sources */,
+				98020092291633A700E193E6 /* DateScrollView.swift in Sources */,
+				980200872916326D00E193E6 /* CalendarManager.swift in Sources */,
+				980200942916343600E193E6 /* StatisticsView.swift in Sources */,
+				9802008C291632E800E193E6 /* CalendarView.swift in Sources */,
+				9802008A291632B400E193E6 /* Month.swift in Sources */,
+				C686F5E12910215A0057BB0D /* PhotoPicker.swift in Sources */,
+				C686F5DC29101C6B0057BB0D /* AddObjectView.swift in Sources */,
+				980200902916338D00E193E6 /* DateHolder.swift in Sources */,
+				9802008E2916331F00E193E6 /* DayOfWeekView.swift in Sources */,
 				C6EFB9D12903AAF700C53743 /* ThrowAwayApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
