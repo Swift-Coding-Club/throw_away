@@ -19,8 +19,11 @@ class TabBarViewController: UITabBarController {
     
     func setupVCs() {
         
+        let storyboard = UIStoryboard(name: "ProductList", bundle: nil)
+        let productListVC = storyboard.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
+
         viewControllers = [
-            createNavController(for: UIViewController(), title:"홈", imageName: "ic_folder"),
+            createNavController(for: productListVC, title:"홈", imageName: "ic_folder"),
             createNavController(for: UIViewController(), title: "통계", imageName: "ic_graph"),
             createNavController(for: UIViewController(), title: "설정", imageName: "ic_settings")
         ]
@@ -36,8 +39,6 @@ class TabBarViewController: UITabBarController {
         navController.tabBarItem.image = unselectedImage.withRenderingMode(.alwaysOriginal) // deselect image
         let selectedImage = UIImage(named: imageName)!
         navController.tabBarItem.selectedImage = selectedImage.withRenderingMode(.alwaysOriginal) // select image
-        rootViewController.navigationItem.title = title
-        
         return navController
     }
 
@@ -55,8 +56,6 @@ class TabBarViewController: UITabBarController {
                 $0.imageInsets = UIEdgeInsets.init(top: -4, left: 0, bottom: 4, right: 0)
             })
         }
-        
-        debugPrint(tabBar.frame.width, tabBar.frame.height)
     }
     
     func updateTabBarAppearance() {
