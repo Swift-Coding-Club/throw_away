@@ -16,6 +16,7 @@
 		980200942916343600E193E6 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980200932916343600E193E6 /* StatisticsView.swift */; };
 		9805138E2916477E00A4E9BD /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9805138C2916477E00A4E9BD /* Product+CoreDataClass.swift */; };
 		9805138F2916477E00A4E9BD /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9805138D2916477E00A4E9BD /* Product+CoreDataProperties.swift */; };
+		9805139E2916495100A4E9BD /* ThrowAwayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9805139D2916495100A4E9BD /* ThrowAwayTests.swift */; };
 		C686F5DC29101C6B0057BB0D /* AddObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686F5DB29101C6B0057BB0D /* AddObjectView.swift */; };
 		C686F5E12910215A0057BB0D /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C686F5E02910215A0057BB0D /* PhotoPicker.swift */; };
 		C6EFB9D12903AAF700C53743 /* ThrowAwayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9D02903AAF700C53743 /* ThrowAwayApp.swift */; };
@@ -25,6 +26,16 @@
 		C6EFB9DA2903AAFA00C53743 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9D92903AAFA00C53743 /* Persistence.swift */; };
 		C6EFB9DD2903AAFA00C53743 /* ThrowAway.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C6EFB9DB2903AAFA00C53743 /* ThrowAway.xcdatamodeld */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		980513982916493400A4E9BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6EFB9C52903AAF700C53743 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6EFB9CC2903AAF700C53743;
+			remoteInfo = ThrowAway;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		980200862916326D00E193E6 /* CalendarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
@@ -36,6 +47,8 @@
 		980200932916343600E193E6 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		9805138C2916477E00A4E9BD /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9805138D2916477E00A4E9BD /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		980513942916493300A4E9BD /* ThrowAwayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThrowAwayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9805139D2916495100A4E9BD /* ThrowAwayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThrowAwayTests.swift; sourceTree = "<group>"; };
 		C686F5DB29101C6B0057BB0D /* AddObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddObjectView.swift; sourceTree = "<group>"; };
 		C686F5E02910215A0057BB0D /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		C6EFB9CD2903AAF700C53743 /* ThrowAway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrowAway.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +61,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		980513912916493300A4E9BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6EFB9CA2903AAF700C53743 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,6 +108,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		980513952916493400A4E9BD /* ThrowAwayTests */ = {
+			isa = PBXGroup;
+			children = (
+				9805139D2916495100A4E9BD /* ThrowAwayTests.swift */,
+			);
+			path = ThrowAwayTests;
+			sourceTree = "<group>";
+		};
 		C686F5DF291021450057BB0D /* AddObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +131,7 @@
 				9805138C2916477E00A4E9BD /* Product+CoreDataClass.swift */,
 				9805138D2916477E00A4E9BD /* Product+CoreDataProperties.swift */,
 				C6EFB9CF2903AAF700C53743 /* ThrowAway */,
+				980513952916493400A4E9BD /* ThrowAwayTests */,
 				C6EFB9CE2903AAF700C53743 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				C6EFB9CD2903AAF700C53743 /* ThrowAway.app */,
+				980513942916493300A4E9BD /* ThrowAwayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,6 +171,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		980513932916493300A4E9BD /* ThrowAwayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9805139A2916493400A4E9BD /* Build configuration list for PBXNativeTarget "ThrowAwayTests" */;
+			buildPhases = (
+				980513902916493300A4E9BD /* Sources */,
+				980513912916493300A4E9BD /* Frameworks */,
+				980513922916493300A4E9BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				980513992916493400A4E9BD /* PBXTargetDependency */,
+			);
+			name = ThrowAwayTests;
+			productName = ThrowAwayTests;
+			productReference = 980513942916493300A4E9BD /* ThrowAwayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C6EFB9CC2903AAF700C53743 /* ThrowAway */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6EFB9E02903AAFA00C53743 /* Build configuration list for PBXNativeTarget "ThrowAway" */;
@@ -165,9 +213,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					980513932916493300A4E9BD = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = C6EFB9CC2903AAF700C53743;
+					};
 					C6EFB9CC2903AAF700C53743 = {
 						CreatedOnToolsVersion = 14.0;
 					};
@@ -188,11 +240,19 @@
 			projectRoot = "";
 			targets = (
 				C6EFB9CC2903AAF700C53743 /* ThrowAway */,
+				980513932916493300A4E9BD /* ThrowAwayTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		980513922916493300A4E9BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6EFB9CB2903AAF700C53743 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -205,6 +265,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		980513902916493300A4E9BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9805139E2916495100A4E9BD /* ThrowAwayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C6EFB9C92903AAF700C53743 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,7 +297,53 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		980513992916493400A4E9BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6EFB9CC2903AAF700C53743 /* ThrowAway */;
+			targetProxy = 980513982916493400A4E9BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		9805139B2916493400A4E9BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ddugibab.ThrowAway.ThrowAwayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThrowAway.app/ThrowAway";
+			};
+			name = Debug;
+		};
+		9805139C2916493400A4E9BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ddugibab.ThrowAway.ThrowAwayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ThrowAway.app/ThrowAway";
+			};
+			name = Release;
+		};
 		C6EFB9DE2903AAFA00C53743 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -413,6 +527,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9805139A2916493400A4E9BD /* Build configuration list for PBXNativeTarget "ThrowAwayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9805139B2916493400A4E9BD /* Debug */,
+				9805139C2916493400A4E9BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C6EFB9C82903AAF700C53743 /* Build configuration list for PBXProject "ThrowAway" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
