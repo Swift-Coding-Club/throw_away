@@ -14,10 +14,8 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newItem = Product(context: viewContext)
-            newItem.title = "Lipstic"
-            newItem.memo = "this is description"
-            newItem.cleaningDay = Date()
+            let newItem = Item(context: viewContext)
+            newItem.timestamp = Date()
         }
         do {
             try viewContext.save()
@@ -33,8 +31,6 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
-        let path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)[0]
-        print(path)
         container = NSPersistentContainer(name: "ThrowAway")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
