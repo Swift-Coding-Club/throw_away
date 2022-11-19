@@ -12,7 +12,6 @@ struct CalendarView: View {
     @State private var selection: Bool = false
     @State private var date = Date()
     let calendarManager = CalendarManager()
-
     var body: some View {
         VStack {
             let firstDayOfMonth = calendarManager.firstOfMonth(dateHolder.date)
