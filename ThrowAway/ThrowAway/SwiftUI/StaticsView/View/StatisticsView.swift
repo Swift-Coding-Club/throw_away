@@ -54,8 +54,9 @@ struct StatisticsView: View {
             HStack {
                 ForEach(productArray, id: \.self) {product in
                     Image(product)
-                        .frame(width: setWidth / 6, height: setWidth / 6, alignment: .center)
+                        .resizable()
                         .frame(width: screenWidth / 6, height: screenWidth / 6, alignment: .center)
+                        .aspectRatio(contentMode: .fit)
                         .clipShape(Circle())
                 }
             }
