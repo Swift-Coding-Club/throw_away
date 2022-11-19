@@ -7,13 +7,11 @@
 
 import Foundation
 
-
 extension Bundle {
     
     private static var bundle: Bundle?
-
     
-    static func normalModule(_ bundleName: String) ->  Bundle? {
+    static func normalModule(_ bundleName: String) -> Bundle? {
 
         var candidates = [
             // Bundle should be present here when the package is linked into an App.
@@ -53,5 +51,3 @@ extension Bundle {
     }
     
 }
-
-

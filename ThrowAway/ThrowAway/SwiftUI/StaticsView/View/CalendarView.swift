@@ -57,7 +57,7 @@ struct CalendarCell: View {
         if count <= start {
             let day = daysInPrevMonth + count - start
             return Month(monthType: MonthType.PreviouseMonth, dayInt: day)
-        } else if (count - start > daysInMonth) {
+        } else if count - start > daysInMonth {
             let day = count - start - daysInMonth
             return Month(monthType: MonthType.NextMonth, dayInt: day)
         }

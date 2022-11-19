@@ -25,7 +25,7 @@ struct StatisticsView: View {
                 .padding(.vertical, 20)
                 .font(.system(size: 20))
             
-            // TODO: - Rectangle = 달력 위치
+            // TODO:- Rectangle = 달력 위치
             
             DayOfWeekView()
             CalendarView()
@@ -35,7 +35,7 @@ struct StatisticsView: View {
         }
     }
     
-    func ProductArrayView(text: String , productArray: [String]) -> some View {
+    func ProductArrayView(text: String, productArray: [String]) -> some View {
         VStack(alignment: .leading) {
             HStack {
                 Text("\(text)(\(productArray.count))")

@@ -12,7 +12,7 @@ struct AddObjectView: View {
     
     @Environment(\.presentationMode) private var presentationMode
     @State private var showImagePicker: Bool = false
-    @State private var objectImage: UIImage? = nil
+    @State private var objectImage: UIImage?
     
     @State private var objectName: String = ""
     @State private var objectDescription: String = ""

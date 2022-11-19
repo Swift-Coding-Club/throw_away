@@ -35,8 +35,6 @@ class ProductTableViewCell: UITableViewCell {
     
     // update product image and name
     func configure(imgPath: String) {
-        
-  
         let name = URL(fileURLWithPath: imgPath).deletingPathExtension().lastPathComponent
 
         productNameLabel.text = getProductName(with: name)

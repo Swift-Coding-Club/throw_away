@@ -21,14 +21,13 @@ class TabBarViewController: UITabBarController {
     func setupVCs() {
         
         let storyboard = UIStoryboard(name: "ProductList", bundle: nil)
-        let productListVC = storyboard.instantiateViewController(withIdentifier:
-                                                                    "ProductListViewController") as! ProductListViewController
+        let productListVC = storyboard.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
 
         // date holder
         let staticsView = StatisticsView().environmentObject(DateHolder())
         let staticsVC = UIHostingController(rootView: staticsView)
         viewControllers = [
-            createNavController(for: productListVC, title:"홈", imageName: "ic_folder"),
+            createNavController(for: productListVC, title: "홈", imageName: "ic_folder"),
             createNavController(for: staticsVC, title: "통계", imageName: "ic_graph"),
             createNavController(for: UIViewController(), title: "설정", imageName: "ic_settings")
         ]
@@ -77,9 +76,8 @@ class TabBarViewController: UITabBarController {
             tabBar.scrollEdgeAppearance = tabBarAppearance
             
         } else {
-           UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor: selectedItemTextColor],
-                                                            for: .selected)
-           UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor: unselectedItemTextColor],                                                 for: .normal)
+           UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor: selectedItemTextColor], for: .selected)
+           UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor: unselectedItemTextColor], for: .normal)
            tabBar.barTintColor = .white
          }
     }
