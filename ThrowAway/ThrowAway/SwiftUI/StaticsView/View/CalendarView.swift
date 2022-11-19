@@ -9,6 +9,9 @@ import SwiftUI
 
 struct CalendarView: View {
     @EnvironmentObject var dateHolder: DateHolder
+    @State private var selection: Bool? = false
+    @State private var columnIndex = 0
+    @State private var rowIndex = 0
     
     var body: some View {
         VStack {
@@ -26,7 +29,22 @@ struct CalendarView: View {
                                      startingSpaces: startingSpaces,
                                      daysInMonth: daysInMonth,
                                      daysInPrevMonth: daysInPrevMonth
-                        ).environmentObject(dateHolder)
+                        )
+                        .background(Color.green)
+                        .onTapGesture{
+                            
+                            // TODO: - selection된 것에 따라 팝업 띄우기
+                            
+                            self.selection = true
+                            
+                            // TODO: - 선택한 날짜
+                            
+                            self.rowIndex = row
+                            self.columnIndex = column
+                            print([rowIndex, columnIndex])
+                            print(count - startingSpaces)
+                        }
+                        .environmentObject(dateHolder)
                     }
                 }
             }
