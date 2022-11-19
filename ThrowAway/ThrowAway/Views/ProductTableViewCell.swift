@@ -13,6 +13,10 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var createdDateLabel: UILabel!
     
+    var productName: String {
+        return productNameLabel.text ?? ""
+    }
+    
     private let dateFormatter: ((String) -> DateFormatter) = { format in
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
@@ -75,11 +79,4 @@ class ProductTableViewCell: UITableViewCell {
         return calendar.date(from: dateComponents)
     }
     
-//    
-//    func showImageFromBundle() {
-//        guard let bundle = Bundle.currentBundle else { return }
-//        let paths = bundle.paths(forResourcesOfType: "png", inDirectory: nil)
-//
-//
-//    }
 }
