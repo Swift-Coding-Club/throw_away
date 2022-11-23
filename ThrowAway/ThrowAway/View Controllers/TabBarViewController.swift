@@ -26,10 +26,12 @@ class TabBarViewController: UITabBarController {
         // date holder
         let staticsView = StatisticsView().environmentObject(DateHolder())
         let staticsVC = UIHostingController(rootView: staticsView)
+        let settingVC = UIHostingController(rootView: SettingView())
+        
         viewControllers = [
             createNavController(for: productListVC, title: "홈", imageName: "ic_folder"),
             createNavController(for: staticsVC, title: "통계", imageName: "ic_graph"),
-            createNavController(for: UIViewController(), title: "설정", imageName: "ic_settings")
+            createNavController(for: settingVC, title: "설정", imageName: "ic_settings")
         ]
     }
     

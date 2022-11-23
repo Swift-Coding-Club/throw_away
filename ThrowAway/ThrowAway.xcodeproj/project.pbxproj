@@ -34,6 +34,9 @@
 		3AE4E65D29110AD3004BC324 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AE4E65C29110AD3004BC324 /* Assets.xcassets */; };
 		3AE4E66029110AD3004BC324 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE4E65E29110AD3004BC324 /* LaunchScreen.storyboard */; };
 		986F9CB6292898210051D77C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 986F9CB5292898210051D77C /* .swiftlint.yml */; };
+		C69CE8C3292E42210074D3E2 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69CE8C2292E42210074D3E2 /* SettingView.swift */; };
+		C69CE8C5292E42290074D3E2 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69CE8C4292E42290074D3E2 /* SettingViewModel.swift */; };
+		C69CE8CB292E4B9C0074D3E2 /* SettingViewCellStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69CE8CA292E4B9C0074D3E2 /* SettingViewCellStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		3AE4E65F29110AD3004BC324 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AE4E66129110AD3004BC324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		986F9CB5292898210051D77C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		C69CE8C2292E42210074D3E2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		C69CE8C4292E42290074D3E2 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		C69CE8CA292E4B9C0074D3E2 /* SettingViewCellStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewCellStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 				3A3412992916526100BDFB34 /* Preview Content */,
 				3A34126F29164F8C00BDFB34 /* AddObjectView */,
 				3A34127829164FB000BDFB34 /* StaticsView */,
+				C69CE8C1292E40740074D3E2 /* SettingView */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -251,6 +258,16 @@
 				3A6D906329150D9900B1D882 /* ProductListViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C69CE8C1292E40740074D3E2 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				C69CE8C2292E42210074D3E2 /* SettingView.swift */,
+				C69CE8C4292E42290074D3E2 /* SettingViewModel.swift */,
+				C69CE8CA292E4B9C0074D3E2 /* SettingViewCellStyle.swift */,
+			);
+			path = SettingView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,12 +417,15 @@
 				3A34126E29164F8400BDFB34 /* Product+CoreDataClass.swift in Sources */,
 				3AE4E65629110AD3004BC324 /* SceneDelegate.swift in Sources */,
 				3A34128729164FE900BDFB34 /* DateScrollView.swift in Sources */,
+				C69CE8C5292E42290074D3E2 /* SettingViewModel.swift in Sources */,
 				3A34126D29164F8400BDFB34 /* Product+CoreDataProperties.swift in Sources */,
 				3A34127729164FA400BDFB34 /* PhotoPicker.swift in Sources */,
 				3AD6E536291528D8000E966E /* ProductInfo.swift in Sources */,
 				3A34128629164FE900BDFB34 /* DayOfWeekView.swift in Sources */,
 				3A34128B2916500E00BDFB34 /* ThrowAway.xcdatamodeld in Sources */,
+				C69CE8CB292E4B9C0074D3E2 /* SettingViewCellStyle.swift in Sources */,
 				3A34127429164FA400BDFB34 /* Persistence.swift in Sources */,
+				C69CE8C3292E42210074D3E2 /* SettingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,7 +623,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sunmi.ThrowAway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -635,7 +655,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sunmi.ThrowAway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
