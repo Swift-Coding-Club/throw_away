@@ -36,7 +36,7 @@
 		986F9CB6292898210051D77C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 986F9CB5292898210051D77C /* .swiftlint.yml */; };
 		C69CE8C3292E42210074D3E2 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69CE8C2292E42210074D3E2 /* SettingView.swift */; };
 		C69CE8C5292E42290074D3E2 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69CE8C4292E42290074D3E2 /* SettingViewModel.swift */; };
-		C69CE8CB292E4B9C0074D3E2 /* SettingViewCellStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69CE8CA292E4B9C0074D3E2 /* SettingViewCellStyle.swift */; };
+		C69CE8CB292E4B9C0074D3E2 /* SettingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69CE8CA292E4B9C0074D3E2 /* SettingViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +82,7 @@
 		986F9CB5292898210051D77C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C69CE8C2292E42210074D3E2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		C69CE8C4292E42290074D3E2 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
-		C69CE8CA292E4B9C0074D3E2 /* SettingViewCellStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewCellStyle.swift; sourceTree = "<group>"; };
+		C69CE8CA292E4B9C0074D3E2 /* SettingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,7 +265,7 @@
 			children = (
 				C69CE8C2292E42210074D3E2 /* SettingView.swift */,
 				C69CE8C4292E42290074D3E2 /* SettingViewModel.swift */,
-				C69CE8CA292E4B9C0074D3E2 /* SettingViewCellStyle.swift */,
+				C69CE8CA292E4B9C0074D3E2 /* SettingViewCell.swift */,
 			);
 			path = SettingView;
 			sourceTree = "<group>";
@@ -423,7 +423,7 @@
 				3AD6E536291528D8000E966E /* ProductInfo.swift in Sources */,
 				3A34128629164FE900BDFB34 /* DayOfWeekView.swift in Sources */,
 				3A34128B2916500E00BDFB34 /* ThrowAway.xcdatamodeld in Sources */,
-				C69CE8CB292E4B9C0074D3E2 /* SettingViewCellStyle.swift in Sources */,
+				C69CE8CB292E4B9C0074D3E2 /* SettingViewCell.swift in Sources */,
 				3A34127429164FA400BDFB34 /* Persistence.swift in Sources */,
 				C69CE8C3292E42210074D3E2 /* SettingView.swift in Sources */,
 			);
