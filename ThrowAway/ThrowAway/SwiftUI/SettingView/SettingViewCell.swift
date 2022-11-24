@@ -14,21 +14,25 @@ struct SettingViewCell: View {
     var isSystemName: Bool = false
     
     var body: some View {
-        HStack {
-            Text(title)
-            
-            Spacer()
-            
-            if isSystemName {
-                Image(systemName: imageName)
-            } else {
-                Image(imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 24, height: 24)
+        VStack(spacing: 0) {
+            HStack {
+                Text(title)
+                
+                Spacer()
+                
+                if isSystemName {
+                    Image(systemName: imageName)
+                } else {
+                    Image(imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24, height: 24)
+                }
             }
+            .settingViewCellStyle()
+            
+            Divider().padding(.horizontal, 22)
         }
-        .settingViewCellStyle()
     }
 }
 

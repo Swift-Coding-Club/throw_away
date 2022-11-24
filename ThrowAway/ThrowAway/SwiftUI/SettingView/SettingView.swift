@@ -16,13 +16,10 @@ struct SettingView: View {
         VStack(spacing: 0) {
             
             SettingViewCell(title: "License", imageName: "chevron.right", isSystemName: true)
-            Divider().padding(.horizontal, 22)
             
             SettingViewCell(title: "개발자 소개", imageName: "github")
-            Divider().padding(.horizontal, 22)
             
             SettingViewCell(title: "개발자에게 커피 사주기", imageName: "buymeacoffee")
-            Divider().padding(.horizontal, 22)
             
             HStack {
                 Text("App version")
