@@ -28,6 +28,18 @@ class CalendarManager {
         return calendar.date(byAdding: .month, value: -1, to: date)!
     }
     
+    // MARK: -
+    
+    func today(_ date: Date) -> String {
+        dateFormatter.dateFormat = "yyyy-M-d"
+        return dateFormatter.string(from: date)
+    }
+    
+    func yearMonth(_ date: Date) -> String {
+        dateFormatter.dateFormat = "yyyy-M"
+        return dateFormatter.string(from: date)
+    }
+    
     func daysInMonth(_ date: Date) -> Int {
         let range = calendar.range(of: .day, in: .month, for: date)!
         return range.count

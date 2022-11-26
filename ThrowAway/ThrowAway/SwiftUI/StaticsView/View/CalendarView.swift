@@ -9,40 +9,41 @@ import SwiftUI
 
 struct CalendarView: View {
     @EnvironmentObject var dateHolder: DateHolder
-    @State private var selection: Bool? = false
-    @State private var columnIndex = 0
-    @State private var rowIndex = 0
-    
+    @State private var selection: Bool = false
+    @State private var date = Date()
+    let calendarManager = CalendarManager()
+
     var body: some View {
         VStack {
-            let firstDayOfMonth = CalendarManager().firstOfMonth(dateHolder.date)
-            let startingSpaces = CalendarManager().weekDay(firstDayOfMonth)
-            let daysInMonth = CalendarManager().daysInMonth(dateHolder.date)
-            let prevMonth = CalendarManager().minusMonth(dateHolder.date)
-            let daysInPrevMonth = CalendarManager().daysInMonth(prevMonth)
+            let firstDayOfMonth = calendarManager.firstOfMonth(dateHolder.date)
+            let startingSpaces = calendarManager.weekDay(firstDayOfMonth)
+            let daysInMonth = calendarManager.daysInMonth(dateHolder.date)
+            let prevMonth = calendarManager.minusMonth(dateHolder.date)
+            let daysInPrevMonth = calendarManager.daysInMonth(prevMonth)
+            
+            // TODO: - today를 Coredata 날짜로 수정하여 비움일을 표시
+            
+            let today = calendarManager.today(dateHolder.date)
+            let yearMonth = calendarManager.yearMonth(dateHolder.date)
             
             ForEach(0..<6) { row in
                 HStack {
                     ForEach(1..<8) { column in
                         let count = column + (row * 7)
+
+                        let day = String(count-startingSpaces)
+                        
                         CalendarCell(count: count,
                                      startingSpaces: startingSpaces,
                                      daysInMonth: daysInMonth,
                                      daysInPrevMonth: daysInPrevMonth
                         )
-                        .background(Color.green)
-                        .onTapGesture{
-                            
+                        .background(today == "\(yearMonth)-\(day)" ? Color.green : Color.white)
+//                        .foregroundColor(row == 0 || 6 ? Color.blue : Color.black)
+                        .onTapGesture {
                             // TODO: - selection된 것에 따라 팝업 띄우기
-                            
+
                             self.selection = true
-                            
-                            // TODO: - 선택한 날짜
-                            
-                            self.rowIndex = row
-                            self.columnIndex = column
-                            print([rowIndex, columnIndex])
-                            print(count - startingSpaces)
                         }
                         .environmentObject(dateHolder)
                     }
