@@ -67,20 +67,21 @@ struct CalendarCell: View {
     }
     
     func textColor(type: MonthType) -> Color {
-        return type == MonthType.CurrentMonth ? .black : .gray
+        return type == MonthType.currentMonth ? .black : .gray
     }
     
     func month() -> Month {
-        let start = startingSpaces == 0 ? startingSpaces + 7 : startingSpaces
+        let start = (startingSpaces == 0) ? startingSpaces + 7 : startingSpaces
         if count <= start {
             let day = daysInPrevMonth + count - start
-            return Month(monthType: MonthType.PreviouseMonth, dayInt: day)
+            return Month(monthType: MonthType.previousMonth, dayInt: day)
+            
         } else if count - start > daysInMonth {
             let day = count - start - daysInMonth
-            return Month(monthType: MonthType.NextMonth, dayInt: day)
+            return Month(monthType: MonthType.nextMonth, dayInt: day)
         }
         let day = count - start
-        return Month(monthType: MonthType.CurrentMonth, dayInt: day)
+        return Month(monthType: MonthType.currentMonth, dayInt: day)
     }
 }
 

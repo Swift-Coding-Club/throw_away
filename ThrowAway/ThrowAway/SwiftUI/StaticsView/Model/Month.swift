@@ -8,9 +8,9 @@
 import SwiftUI
 
 enum MonthType {
-    case PreviouseMonth
-    case CurrentMonth
-    case NextMonth
+    case previousMonth
+    case currentMonth
+    case nextMonth
 }
 
 struct Month {
