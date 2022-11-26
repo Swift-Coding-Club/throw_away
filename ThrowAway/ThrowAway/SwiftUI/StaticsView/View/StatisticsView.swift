@@ -28,7 +28,6 @@ struct StatisticsView: View {
                 
                 DayOfWeekView()
                 CalendarView()
-                
             }
             .padding(.horizontal, 16)
             
