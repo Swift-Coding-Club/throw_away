@@ -37,34 +37,13 @@ class ProductTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    // update product image and name
-    func configure(imgPath: String) {
-        let name = URL(fileURLWithPath: imgPath).deletingPathExtension().lastPathComponent
-
-        productNameLabel.text = getProductName(with: name)
-        
-        if let randomDate = generateRandomDate() {
-            createdDateLabel.text = dateFormatter("yyyy.MM.dd").string(from: randomDate)
+    func configure(item: Product) {
+        productNameLabel.text = item.title
+        if let cleaningDay = item.cleaningDay {
+            createdDateLabel.text = dateFormatter("yyyy.MM.dd").string(from: cleaningDay)
         }
-        
-        productImageView.image = UIImage(contentsOfFile: imgPath)
-    }
-    
-    func getProductName(with name: String) -> String {
-        
-        switch name {
-        case "clearpad":
-            return "이즈앤트리 어니언 뉴페어 클리어패드"
-        case "showerTowel":
-            return "뱀부 샤워타올"
-        case "lipstick":
-            return "에르메스 루즈 새틴 립스틱"
-        case "shoes":
-            return "닥터마틴 3홀 모노블랙"
-        case "powder":
-            return "아멜리 베이크드 파우더"
-        default:
-            return ""
+        if let photo = item.photo {
+            productImageView.image = UIImage(data: photo)
         }
     }
     
