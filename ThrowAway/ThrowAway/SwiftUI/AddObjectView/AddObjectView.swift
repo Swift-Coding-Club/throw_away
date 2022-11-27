@@ -9,7 +9,22 @@ import SwiftUI
 import PhotosUI
 
 struct AddObjectView: View {
+    enum ViewType {
+        case new
+        case edit
+        
+        var submitText: String {
+            switch self {
+            case .new:
+                return "만들기"
+            case .edit:
+                return "수정"
+            }
+        }
+    }
+    
     private let product: Product?
+    private var viewType: ViewType = .new
     
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) private var presentationMode
@@ -35,6 +50,7 @@ struct AddObjectView: View {
             return
         }
         // TODO: 수정화면인 경우, 값을 초기화할때 coredata 에서 데이터를 불러와 값으로 저장해 둔다
+        self.viewType = .edit
         self._objectName = .init(initialValue: savedProduct.title ?? "")
         self._selectedDate = .init(initialValue: savedProduct.cleaningDay ?? Date())
         self._objectDescription = .init(initialValue: savedProduct.memo ?? "")
@@ -105,7 +121,7 @@ struct AddObjectView: View {
         })
         .toolbar {
             ToolbarItem {
-                Button("만들기", action: addItem)
+                Button(viewType.submitText, action: addItem)
             }
         }
     }
