@@ -91,6 +91,21 @@ class ProductListViewController: UIViewController {
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
     
+    private func cleanUp(at index: Int, completion: @escaping () -> Void) {
+        guard let viewContext = self.viewContext else {
+            return
+        }
+        let updatedItem = productList[index]
+        updatedItem.isCleanedUp = true
+        completion()
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
     private func handleMoveToEmpty(for indexPath: IndexPath, productName: String) {
 
         let message = "\(productName)을 비우시겠습니까?"
@@ -98,18 +113,14 @@ class ProductListViewController: UIViewController {
         
         let noAction = UIAlertAction(title: "아니오", style: .destructive)
         let yesAction = UIAlertAction(title: "예", style: .default) { _ in
-            // delete core data
-            DispatchQueue.main.async {
-                self.handleMoveToTrash(for: indexPath)
+            self.cleanUp(at: indexPath.row) {
+                self.productList.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
             }
         }
-        
         alert.addAction(noAction)
         alert.addAction(yesAction)
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.present(alert, animated: false)
-        }
+        self.present(alert, animated: false)
     }
     
     @objc func didPressDoneButton() {

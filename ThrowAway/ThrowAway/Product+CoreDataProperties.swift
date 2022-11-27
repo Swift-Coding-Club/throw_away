@@ -19,7 +19,7 @@ extension Product {
     @NSManaged public var title: String?
     @NSManaged public var photo: Data?
     @NSManaged public var memo: String?
-
+    @NSManaged public var isCleanedUp: Bool
 }
 
 extension Product: Identifiable {
