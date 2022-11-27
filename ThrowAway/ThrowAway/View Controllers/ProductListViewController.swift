@@ -75,6 +75,18 @@ class ProductListViewController: UIViewController {
     
     private func handleMoveToTrash(for indexPath: IndexPath) {
         // TODO: remove item from coredata
+        let targetItem = productList[indexPath.row]
+        guard let viewContext = self.viewContext else {
+            return
+        }
+        let object = viewContext.object(with: targetItem.objectID)
+        viewContext.delete(object)
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
         productList.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
