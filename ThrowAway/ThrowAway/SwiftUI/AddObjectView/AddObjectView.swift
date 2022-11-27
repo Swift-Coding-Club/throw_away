@@ -9,6 +9,8 @@ import SwiftUI
 import PhotosUI
 
 struct AddObjectView: View {
+    private let product: Product?
+    
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) private var presentationMode
     @State private var showImagePicker: Bool = false
@@ -22,6 +24,24 @@ struct AddObjectView: View {
     
     private let gray112: Color = Color(red: 112/255, green: 112/255, blue: 112/255)
     private let borderColor: Color = Color(red: 231/255, green: 231/255, blue: 231/255)
+    
+    init(product: Product? = nil) {
+        self.product = product
+        initItemValues(from: product)
+    }
+    
+    private mutating func initItemValues(from product: Product?) {
+        guard let savedProduct = product else {
+            return
+        }
+        // TODO: 수정화면인 경우, 값을 초기화할때 coredata 에서 데이터를 불러와 값으로 저장해 둔다
+        self._objectName = .init(initialValue: savedProduct.title ?? "")
+        self._selectedDate = .init(initialValue: savedProduct.cleaningDay ?? Date())
+        self._objectDescription = .init(initialValue: savedProduct.memo ?? "")
+        if let photoData = savedProduct.photo {
+            self._objectImage = .init(initialValue: UIImage(data: photoData))
+        }
+    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -109,6 +129,6 @@ struct AddObjectView: View {
 
 struct AddObjectView_Previews: PreviewProvider {
     static var previews: some View {
-        AddObjectView()
+        AddObjectView(product: nil)
     }
 }

@@ -7,15 +7,20 @@
 
 import UIKit
 
-class ProductTableViewCell: UITableViewCell {
+protocol ProductTableViewCellDelegate: AnyObject {
+    func didSelect(item: Product)
+}
 
+class ProductTableViewCell: UITableViewCell {
+    private var product: Product?
+    weak var delegate: ProductTableViewCellDelegate?
+    var productName: String {
+        return product?.title ?? ""
+    }
+    
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var createdDateLabel: UILabel!
-    
-    var productName: String {
-        return productNameLabel.text ?? ""
-    }
     
     private let dateFormatter: ((String) -> DateFormatter) = { format in
         let dateFormatter = DateFormatter()
@@ -28,16 +33,23 @@ class ProductTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(touchedView))
+        self.addGestureRecognizer(tap)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    @objc private func touchedView() {
+        guard let selectedProduct = product else { return }
+        delegate?.didSelect(item: selectedProduct)
     }
     
     func configure(item: Product) {
+        self.product = item
+        
         productNameLabel.text = item.title
         if let cleaningDay = item.cleaningDay {
             createdDateLabel.text = dateFormatter("yyyy.MM.dd").string(from: cleaningDay)

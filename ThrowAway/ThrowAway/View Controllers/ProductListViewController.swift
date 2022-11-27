@@ -123,7 +123,7 @@ class ProductListViewController: UIViewController {
             return
         }
         let addObjectView = UIHostingController(rootView:
-                                                    AddObjectView().environment(\.managedObjectContext, viewContext))
+                                                    AddObjectView(product: nil).environment(\.managedObjectContext, viewContext))
         navigationController?.pushViewController(addObjectView, animated: true)
     }
 
@@ -138,6 +138,17 @@ class ProductListViewController: UIViewController {
         }
         
         tableView.isEditing = !tableView.isEditing
+    }
+}
+
+extension ProductListViewController: ProductTableViewCellDelegate {
+    func didSelect(item: Product) {
+        guard let viewContext = viewContext else {
+            return
+        }
+        let addObjectView = UIHostingController(rootView:
+                                                    AddObjectView(product: item).environment(\.managedObjectContext, viewContext))
+        navigationController?.pushViewController(addObjectView, animated: true)
     }
 }
 
@@ -156,6 +167,7 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         cell.productImageView.layer.cornerRadius = 10
         cell.productImageView.layer.masksToBounds = true
         cell.configure(item: productList[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
