@@ -7,12 +7,12 @@
 
 import SwiftUI
 import PhotosUI
+import CoreData
 
 struct AddObjectView: View {
     enum ViewType {
         case new
         case edit
-        
         var submitText: String {
             switch self {
             case .new:
@@ -23,7 +23,7 @@ struct AddObjectView: View {
         }
     }
     
-    private let product: Product?
+    private let selectedProduct: Product?
     private var viewType: ViewType = .new
     
     @Environment(\.managedObjectContext) private var viewContext
@@ -41,7 +41,7 @@ struct AddObjectView: View {
     private let borderColor: Color = Color(red: 231/255, green: 231/255, blue: 231/255)
     
     init(product: Product? = nil) {
-        self.product = product
+        selectedProduct = product
         initItemValues(from: product)
     }
     
@@ -49,7 +49,6 @@ struct AddObjectView: View {
         guard let savedProduct = product else {
             return
         }
-        // TODO: 수정화면인 경우, 값을 초기화할때 coredata 에서 데이터를 불러와 값으로 저장해 둔다
         self.viewType = .edit
         self._objectName = .init(initialValue: savedProduct.title ?? "")
         self._selectedDate = .init(initialValue: savedProduct.cleaningDay ?? Date())
@@ -121,8 +120,35 @@ struct AddObjectView: View {
         })
         .toolbar {
             ToolbarItem {
-                Button(viewType.submitText, action: addItem)
+                Button(viewType.submitText, action: submitAction)
             }
+        }
+    }
+    
+    private func submitAction() {
+        switch viewType {
+        case .new:
+            addItem()
+        case .edit:
+            editItem()
+        }
+    }
+    
+    private func editItem() {
+        guard let updatedObject = selectedProduct else {
+            return
+        }
+        do {
+            updatedObject.memo = objectDescription
+            updatedObject.title = objectName
+            updatedObject.photo = objectImage?.pngData()
+            updatedObject.cleaningDay = selectedDate
+            try viewContext.save()
+            self.presentationMode.wrappedValue.dismiss()
+            // TODO: 수정 후, 목록화면 갱신
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
     
@@ -136,6 +162,7 @@ struct AddObjectView: View {
         do {
             try viewContext.save()
             self.presentationMode.wrappedValue.dismiss()
+            // TODO: 생성 후, 목록화면 갱신
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
