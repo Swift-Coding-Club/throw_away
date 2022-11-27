@@ -119,8 +119,11 @@ class ProductListViewController: UIViewController {
     }
     
     @objc func addProduct() {
-        let addObjectView = UIHostingController(rootView: ContentView().environment(\.managedObjectContext,
-                                                                                     PersistenceController.preview.container.viewContext))
+        guard let viewContext = viewContext else {
+            return
+        }
+        let addObjectView = UIHostingController(rootView:
+                                                    AddObjectView().environment(\.managedObjectContext, viewContext))
         navigationController?.pushViewController(addObjectView, animated: true)
     }
 

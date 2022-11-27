@@ -9,7 +9,7 @@ import SwiftUI
 import PhotosUI
 
 struct AddObjectView: View {
-    
+    @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) private var presentationMode
     @State private var showImagePicker: Bool = false
     @State private var objectImage: UIImage?
@@ -83,6 +83,27 @@ struct AddObjectView: View {
                 objectImage = selectedItem
             }
         })
+        .toolbar {
+            ToolbarItem {
+                Button("만들기", action: addItem)
+            }
+        }
+    }
+    
+    private func addItem() {
+        let newItem = Product(context: viewContext)
+        newItem.memo = objectDescription
+        newItem.title = objectName
+        newItem.photo = objectImage?.pngData()
+        newItem.cleaningDay = selectedDate
+        
+        do {
+            try viewContext.save()
+            self.presentationMode.wrappedValue.dismiss()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
 }
 
