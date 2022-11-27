@@ -18,17 +18,18 @@ struct StatisticsView: View {
     var body: some View {
         
         VStack {
-            DateScrollView()
-                .environmentObject(dateHolder)
-            
-            Text("이번 달의 달성도는 81%입니다.")
-                .padding(.vertical, 20)
-                .font(.system(size: 20))
-            
-            // TODO:- Rectangle = 달력 위치
-            
-            DayOfWeekView()
-            CalendarView()
+            VStack {
+                DateScrollView()
+                    .environmentObject(dateHolder)
+                
+                Text("이번 달의 달성도는 81%입니다.")
+                    .padding(.vertical, 20)
+                    .font(.system(size: 20))
+                
+                DayOfWeekView()
+                CalendarView()
+            }
+            .padding(.horizontal, 16)
             
             ProductArrayView(text: "버리지 못한 물건", productArray: notThrowArray)
             ProductArrayView(text: "늦게 버린 물건", productArray: lateThrowArray)
