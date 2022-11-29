@@ -9,17 +9,27 @@ import SwiftUI
 import StoreKit
 
 struct SettingView: View {
+    
     @ObservedObject var settingViewModel: SettingViewModel = SettingViewModel()
+    
     private let SKStoreProductVC: SKStoreProductViewController = SKStoreProductViewController()
+    private let githubURL: URL = URL(string: "https://github.com/Swift-Coding-Club/throw_away")!
+    private let buymeacoffeeURL: URL = URL(string: "https://www.buymeacoffee.com/biumapp")!
     
     var body: some View {
         VStack(spacing: 0) {
             
             SettingViewCell(title: "License", imageName: "chevron.right", isSystemName: true)
             
-            SettingViewCell(title: "개발자 소개", imageName: "github")
+            Link(destination: githubURL) {
+                SettingViewCell(title: "개발자 소개", imageName: "github")
+                    .foregroundColor(.black)
+            }
             
-            SettingViewCell(title: "개발자에게 커피 사주기", imageName: "buymeacoffee")
+            Link(destination: buymeacoffeeURL) {
+                SettingViewCell(title: "개발자에게 커피 사주기", imageName: "buymeacoffee")
+                    .foregroundColor(.black)
+            }
             
             HStack {
                 Text("App version")
