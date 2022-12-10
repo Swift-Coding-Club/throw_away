@@ -97,6 +97,7 @@ class ProductListViewController: UIViewController {
         }
         let updatedItem = productList[index]
         updatedItem.isCleanedUp = true
+        updatedItem.cleanedUpDay = Date()
         completion()
         do {
             try viewContext.save()

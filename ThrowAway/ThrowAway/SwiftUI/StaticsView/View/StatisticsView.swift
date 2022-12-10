@@ -16,7 +16,6 @@ struct StatisticsView: View {
     @EnvironmentObject var dateHolder: DateHolder
     
     var body: some View {
-        
         VStack {
             VStack {
                 DateScrollView()

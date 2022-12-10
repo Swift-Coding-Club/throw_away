@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Product" representedClassName="Product" syncable="YES">
+        <attribute name="cleanedUpDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="cleaningDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isCleanedUp" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="memo" optional="YES" attributeType="String"/>
@@ -8,6 +9,6 @@
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Product" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="Product" positionX="-63" positionY="-18" width="128" height="119"/>
     </elements>
 </model>
