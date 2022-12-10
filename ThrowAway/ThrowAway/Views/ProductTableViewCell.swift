@@ -7,15 +7,20 @@
 
 import UIKit
 
-class ProductTableViewCell: UITableViewCell {
+protocol ProductTableViewCellDelegate: AnyObject {
+    func didSelect(item: Product)
+}
 
+class ProductTableViewCell: UITableViewCell {
+    private var product: Product?
+    weak var delegate: ProductTableViewCellDelegate?
+    var productName: String {
+        return product?.title ?? ""
+    }
+    
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var createdDateLabel: UILabel!
-    
-    var productName: String {
-        return productNameLabel.text ?? ""
-    }
     
     private let dateFormatter: ((String) -> DateFormatter) = { format in
         let dateFormatter = DateFormatter()
@@ -28,43 +33,29 @@ class ProductTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(touchedView))
+        self.addGestureRecognizer(tap)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-    // update product image and name
-    func configure(imgPath: String) {
-        let name = URL(fileURLWithPath: imgPath).deletingPathExtension().lastPathComponent
-
-        productNameLabel.text = getProductName(with: name)
+    @objc private func touchedView() {
+        guard let selectedProduct = product else { return }
+        delegate?.didSelect(item: selectedProduct)
+    }
+    
+    func configure(item: Product) {
+        self.product = item
         
-        if let randomDate = generateRandomDate() {
-            createdDateLabel.text = dateFormatter("yyyy.MM.dd").string(from: randomDate)
+        productNameLabel.text = item.title
+        if let cleaningDay = item.cleaningDay {
+            createdDateLabel.text = dateFormatter("yyyy.MM.dd").string(from: cleaningDay)
         }
-        
-        productImageView.image = UIImage(contentsOfFile: imgPath)
-    }
-    
-    func getProductName(with name: String) -> String {
-        
-        switch name {
-        case "clearpad":
-            return "이즈앤트리 어니언 뉴페어 클리어패드"
-        case "showerTowel":
-            return "뱀부 샤워타올"
-        case "lipstick":
-            return "에르메스 루즈 새틴 립스틱"
-        case "shoes":
-            return "닥터마틴 3홀 모노블랙"
-        case "powder":
-            return "아멜리 베이크드 파우더"
-        default:
-            return ""
+        if let photo = item.photo {
+            productImageView.image = UIImage(data: photo)
         }
     }
     

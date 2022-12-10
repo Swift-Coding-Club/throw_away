@@ -10,6 +10,8 @@ import SwiftUI
 
 class TabBarViewController: UITabBarController {
     
+    private let persistence = PersistenceController.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -22,7 +24,8 @@ class TabBarViewController: UITabBarController {
         
         let storyboard = UIStoryboard(name: "ProductList", bundle: nil)
         let productListVC = storyboard.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
-
+        productListVC.viewContext = persistence.container.viewContext
+        
         // date holder
         let staticsView = StatisticsView().environmentObject(DateHolder())
         let staticsVC = UIHostingController(rootView: staticsView)

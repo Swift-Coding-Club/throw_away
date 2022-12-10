@@ -7,9 +7,26 @@
 
 import SwiftUI
 import PhotosUI
+import CoreData
 
 struct AddObjectView: View {
+    enum ViewType {
+        case new
+        case edit
+        var submitText: String {
+            switch self {
+            case .new:
+                return "만들기"
+            case .edit:
+                return "수정"
+            }
+        }
+    }
     
+    private let selectedProduct: Product?
+    private var viewType: ViewType = .new
+    
+    @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) private var presentationMode
     @State private var showImagePicker: Bool = false
     @State private var objectImage: UIImage?
@@ -22,6 +39,24 @@ struct AddObjectView: View {
     
     private let gray112: Color = Color(red: 112/255, green: 112/255, blue: 112/255)
     private let borderColor: Color = Color(red: 231/255, green: 231/255, blue: 231/255)
+    
+    init(product: Product? = nil) {
+        selectedProduct = product
+        initItemValues(from: product)
+    }
+    
+    private mutating func initItemValues(from product: Product?) {
+        guard let savedProduct = product else {
+            return
+        }
+        self.viewType = .edit
+        self._objectName = .init(initialValue: savedProduct.title ?? "")
+        self._selectedDate = .init(initialValue: savedProduct.cleaningDay ?? Date())
+        self._objectDescription = .init(initialValue: savedProduct.memo ?? "")
+        if let photoData = savedProduct.photo {
+            self._objectImage = .init(initialValue: UIImage(data: photoData))
+        }
+    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -83,11 +118,60 @@ struct AddObjectView: View {
                 objectImage = selectedItem
             }
         })
+        .toolbar {
+            ToolbarItem {
+                Button(viewType.submitText, action: submitAction)
+            }
+        }
+    }
+    
+    private func submitAction() {
+        switch viewType {
+        case .new:
+            addItem()
+        case .edit:
+            editItem()
+        }
+    }
+    
+    private func editItem() {
+        guard let updatedObject = selectedProduct else {
+            return
+        }
+        do {
+            updatedObject.memo = objectDescription
+            updatedObject.title = objectName
+            updatedObject.photo = objectImage?.pngData()
+            updatedObject.cleaningDay = selectedDate
+            try viewContext.save()
+            self.presentationMode.wrappedValue.dismiss()
+            // TODO: 수정 후, 목록화면 갱신
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
+    private func addItem() {
+        let newItem = Product(context: viewContext)
+        newItem.memo = objectDescription
+        newItem.title = objectName
+        newItem.photo = objectImage?.pngData()
+        newItem.cleaningDay = selectedDate
+        
+        do {
+            try viewContext.save()
+            self.presentationMode.wrappedValue.dismiss()
+            // TODO: 생성 후, 목록화면 갱신
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
 }
 
 struct AddObjectView_Previews: PreviewProvider {
     static var previews: some View {
-        AddObjectView()
+        AddObjectView(product: nil)
     }
 }

@@ -52,5 +52,11 @@ struct PersistenceController {
             }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
+        printFilePath()
+    }
+    
+    private func printFilePath() {
+        let path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)[0]
+        print("📁 DB Path:", path)
     }
 }

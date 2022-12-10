@@ -7,21 +7,34 @@
 
 import UIKit
 import SwiftUI
+import CoreData
 
 class ProductListViewController: UIViewController {
+    
+    var viewContext: NSManagedObjectContext?
     
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
    
     private var doneBarBtn = UIBarButtonItem()
-    private var imagePaths: [String] = [] {
+
+    private lazy var productList: [Product] = {
+        let request = Product.fetchRequest()
+        let sort = NSSortDescriptor(key: "cleaningDay", ascending: false)
+        request.sortDescriptors = [sort]
+        let result = try? viewContext?.fetch(request)
+        infoLabelCount = result?.count ?? 0
+        return result ?? []
+    }()
+
+    private var infoLabelCount: Int = 0 {
         didSet {
-            let info = " 등록된 물건 갯수는 \(imagePaths.count)개 입니다."
-            let attributedString = withBoldText(original: info, text: "\(imagePaths.count)개")
+            let info = " 등록된 물건 갯수는 \(infoLabelCount)개 입니다."
+            let attributedString = withBoldText(original: info, text: "\(infoLabelCount)개")
             infoLabel.attributedText = attributedString
         }
     }
-
+    
     var isEmpty: Bool {
         return true
     }
@@ -38,11 +51,6 @@ class ProductListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsMultipleSelectionDuringEditing = true
-        imagePaths =  Bundle.getFilePathsFromBundle(bundleName: "resource", folderName: "images", fileType: "png")
-        
-        let info = " 등록된 물건 갯수는 \(imagePaths.count)개 입니다."
-        let attributedString = withBoldText(original: info, text: "\(imagePaths.count)개")
-        infoLabel.attributedText = attributedString
     }
     
     private func setupBarButtons() {
@@ -66,9 +74,36 @@ class ProductListViewController: UIViewController {
     }
     
     private func handleMoveToTrash(for indexPath: IndexPath) {
-        // delete data
-        imagePaths.remove(at: indexPath.row)
+        // TODO: remove item from coredata
+        let targetItem = productList[indexPath.row]
+        guard let viewContext = self.viewContext else {
+            return
+        }
+        let object = viewContext.object(with: targetItem.objectID)
+        viewContext.delete(object)
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+        productList.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+    
+    private func cleanUp(at index: Int, completion: @escaping () -> Void) {
+        guard let viewContext = self.viewContext else {
+            return
+        }
+        let updatedItem = productList[index]
+        updatedItem.isCleanedUp = true
+        completion()
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
     
     private func handleMoveToEmpty(for indexPath: IndexPath, productName: String) {
@@ -78,18 +113,14 @@ class ProductListViewController: UIViewController {
         
         let noAction = UIAlertAction(title: "아니오", style: .destructive)
         let yesAction = UIAlertAction(title: "예", style: .default) { _ in
-            // delete core data
-            DispatchQueue.main.async {
-                self.handleMoveToTrash(for: indexPath)
+            self.cleanUp(at: indexPath.row) {
+                self.productList.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
             }
         }
-        
         alert.addAction(noAction)
         alert.addAction(yesAction)
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.present(alert, animated: false)
-        }
+        self.present(alert, animated: false)
     }
     
     @objc func didPressDoneButton() {
@@ -102,7 +133,8 @@ class ProductListViewController: UIViewController {
         }
         
         for var selectedRow in selectedRows {
-            while selectedRow.item >= imagePaths.count {
+            // TODO: delete item from coredata
+            while selectedRow.item >= productList.count {
                 selectedRow.item -= 1
             }
             tableView(tableView, commit: .delete, forRowAt: selectedRow)
@@ -110,8 +142,11 @@ class ProductListViewController: UIViewController {
     }
     
     @objc func addProduct() {
-        let addObjectView = UIHostingController(rootView: ContentView().environment(\.managedObjectContext,
-                                                                                     PersistenceController.preview.container.viewContext))
+        guard let viewContext = viewContext else {
+            return
+        }
+        let addObjectView = UIHostingController(rootView:
+                                                    AddObjectView(product: nil).environment(\.managedObjectContext, viewContext))
         navigationController?.pushViewController(addObjectView, animated: true)
     }
 
@@ -129,10 +164,21 @@ class ProductListViewController: UIViewController {
     }
 }
 
+extension ProductListViewController: ProductTableViewCellDelegate {
+    func didSelect(item: Product) {
+        guard let viewContext = viewContext else {
+            return
+        }
+        let addObjectView = UIHostingController(rootView:
+                                                    AddObjectView(product: item).environment(\.managedObjectContext, viewContext))
+        navigationController?.pushViewController(addObjectView, animated: true)
+    }
+}
+
 extension ProductListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imagePaths.count
+        return productList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -143,8 +189,8 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         
         cell.productImageView.layer.cornerRadius = 10
         cell.productImageView.layer.masksToBounds = true
-        cell.configure(imgPath: imagePaths[indexPath.row])
-        
+        cell.configure(item: productList[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
@@ -193,7 +239,8 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            imagePaths.remove(at: indexPath.item)
+            // TODO: delete item from coredata
+            productList.remove(at: indexPath.item)
             tableView.reloadData()
         }
     }
