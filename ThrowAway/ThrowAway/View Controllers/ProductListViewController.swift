@@ -48,18 +48,15 @@ class ProductListViewController: UIViewController {
     }
     
     private func loadProducts() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
+        let context = PersistenceController.shared.container.viewContext
+
         products = []
-        
+
         do {
             let product = try context.fetch(Product.fetchRequest()) as! [Product]
-            
             product.forEach {
                 products.append($0)
             }
-            
         } catch {
             print(error.localizedDescription)
         }
