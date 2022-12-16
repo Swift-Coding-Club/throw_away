@@ -18,22 +18,7 @@ class ProductListViewController: UIViewController {
    
     private var doneBarBtn = UIBarButtonItem()
 
-    private lazy var productList: [Product] = {
-        let request = Product.fetchRequest()
-        let sort = NSSortDescriptor(key: "cleaningDay", ascending: false)
-        request.sortDescriptors = [sort]
-        let result = try? viewContext?.fetch(request)
-        infoLabelCount = result?.count ?? 0
-        return result ?? []
-    }()
-
-    private var infoLabelCount: Int = 0 {
-        didSet {
-            let info = " 등록된 물건 갯수는 \(infoLabelCount)개 입니다."
-            let attributedString = withBoldText(original: info, text: "\(infoLabelCount)개")
-            infoLabel.attributedText = attributedString
-        }
-    }
+    var products = [Product]()
     
     var isEmpty: Bool {
         return true
@@ -43,6 +28,38 @@ class ProductListViewController: UIViewController {
         super.viewDidLoad()
         setupBarButtons()
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadProducts()
+        
+        products = products.sorted(by: {$0.cleaningDay! < $1.cleaningDay!})
+        
+        attribute()
+    }
+    
+    func attribute() {
+        let info = "등록된 물건 갯수는 \(products.count)개 입니다."
+        let attributedString = withBoldText(original: info, text: "\(products.count)개")
+        infoLabel.attributedText = attributedString
+
+        tableView.reloadData()
+    }
+    
+    private func loadProducts() {
+        let context = PersistenceController.shared.container.viewContext
+
+        products = []
+
+        do {
+            let product = try context.fetch(Product.fetchRequest()) as! [Product]
+            product.forEach {
+                products.append($0)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     private func setupTableView() {
@@ -75,7 +92,7 @@ class ProductListViewController: UIViewController {
     
     private func handleMoveToTrash(for indexPath: IndexPath) {
         // TODO: remove item from coredata
-        let targetItem = productList[indexPath.row]
+        let targetItem = products[indexPath.row]
         guard let viewContext = self.viewContext else {
             return
         }
@@ -87,7 +104,7 @@ class ProductListViewController: UIViewController {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
-        productList.remove(at: indexPath.row)
+        products.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
     
@@ -95,7 +112,7 @@ class ProductListViewController: UIViewController {
         guard let viewContext = self.viewContext else {
             return
         }
-        let updatedItem = productList[index]
+        let updatedItem = products[index]
         updatedItem.isCleanedUp = true
         updatedItem.cleanedUpDay = Date()
         completion()
@@ -115,7 +132,7 @@ class ProductListViewController: UIViewController {
         let noAction = UIAlertAction(title: "아니오", style: .destructive)
         let yesAction = UIAlertAction(title: "예", style: .default) { _ in
             self.cleanUp(at: indexPath.row) {
-                self.productList.remove(at: indexPath.row)
+                self.products.remove(at: indexPath.row)
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
             }
         }
@@ -135,7 +152,7 @@ class ProductListViewController: UIViewController {
         
         for var selectedRow in selectedRows {
             // TODO: delete item from coredata
-            while selectedRow.item >= productList.count {
+            while selectedRow.item >= products.count {
                 selectedRow.item -= 1
             }
             tableView(tableView, commit: .delete, forRowAt: selectedRow)
@@ -146,11 +163,10 @@ class ProductListViewController: UIViewController {
         guard let viewContext = viewContext else {
             return
         }
-        let addObjectView = UIHostingController(rootView:
-                                                    AddObjectView(product: nil).environment(\.managedObjectContext, viewContext))
+        let addObjectView = UIHostingController(rootView: AddObjectView(product: nil).environment(\.managedObjectContext, viewContext))
         navigationController?.pushViewController(addObjectView, animated: true)
     }
-
+    
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         
@@ -179,7 +195,7 @@ extension ProductListViewController: ProductTableViewCellDelegate {
 extension ProductListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return productList.count
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -187,10 +203,10 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
                                                        for: indexPath) as? ProductTableViewCell else {
             return UITableViewCell()
         }
-        
+
         cell.productImageView.layer.cornerRadius = 10
         cell.productImageView.layer.masksToBounds = true
-        cell.configure(item: productList[indexPath.row])
+        cell.configure(item: products[indexPath.row])
         cell.delegate = self
         return cell
     }
@@ -241,7 +257,7 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // TODO: delete item from coredata
-            productList.remove(at: indexPath.item)
+            products.remove(at: indexPath.item)
             tableView.reloadData()
         }
     }

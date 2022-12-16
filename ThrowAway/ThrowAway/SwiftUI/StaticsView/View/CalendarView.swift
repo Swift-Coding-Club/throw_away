@@ -13,6 +13,9 @@ struct CalendarView: View {
     @State private var date = Date()
     let calendarManager = CalendarManager()
 
+    @FetchRequest(entity: Product.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Product.cleaningDay, ascending: true)])
+    var products: FetchedResults<Product>
+    
     var body: some View {
         VStack {
             let firstDayOfMonth = calendarManager.firstOfMonth(dateHolder.date)
@@ -20,31 +23,25 @@ struct CalendarView: View {
             let daysInMonth = calendarManager.daysInMonth(dateHolder.date)
             let prevMonth = calendarManager.minusMonth(dateHolder.date)
             let daysInPrevMonth = calendarManager.daysInMonth(prevMonth)
-            
+
             // TODO: - today를 Coredata 날짜로 수정하여 비움일을 표시
-            
-            let today = calendarManager.today(dateHolder.date)
-            let yearMonth = calendarManager.yearMonth(dateHolder.date)
-            
+
+//            let cleaningDay = calendarManager.today(Date())
+//            let yearMonth = calendarManager.yearMonth(Date())
+
             ForEach(0..<6) { row in
                 HStack {
                     ForEach(1..<8) { column in
                         let count = column + (row * 7)
-
                         let day = String(count-startingSpaces)
                         
                         CalendarCell(count: count,
                                      startingSpaces: startingSpaces,
                                      daysInMonth: daysInMonth,
-                                     daysInPrevMonth: daysInPrevMonth
+                                     daysInPrevMonth: daysInPrevMonth,
+                                     column: column
                         )
-                        .background(today == "\(yearMonth)-\(day)" ? Color.green : Color.white)
-//                        .foregroundColor(row == 0 || 6 ? Color.blue : Color.black)
-                        .onTapGesture {
-                            // TODO: - selection된 것에 따라 팝업 띄우기
-
-                            self.selection = true
-                        }
+//                        .background(cleaningDay == yearMonth + day ? Color.green : Color.white)
                         .environmentObject(dateHolder)
                     }
                 }
@@ -60,15 +57,28 @@ struct CalendarCell: View {
     let startingSpaces: Int
     let daysInMonth: Int
     let daysInPrevMonth: Int
+    let column: Int
+    @State private var selection = false
     
     var body: some View {
         Text(String(month().dayInt))
-            .foregroundColor(textColor(type: month().monthType))
+            .foregroundColor(textColors(type: month().monthType))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onTapGesture {
+                selection.toggle()
+            }
     }
     
-    func textColor(type: MonthType) -> Color {
-        return type == MonthType.currentMonth ? .black : .gray
+    func textColors(type: MonthType) -> Color {
+        if selection {
+            return .white
+        } else if column == 7 {
+            return .blue
+        } else if column == 1 {
+            return .red
+        } else {
+            return type == MonthType.currentMonth ? .black : .gray
+        }
     }
     
     func month() -> Month {
