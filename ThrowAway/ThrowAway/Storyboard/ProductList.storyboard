@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JvY-sy-gOq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JvY-sy-gOq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmD-kY-eFO" userLabel="Top View">
-                                <rect key="frame" x="0.0" y="70" width="414" height="25"/>
+                                <rect key="frame" x="0.0" y="66" width="414" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등록된 물건 갯수는 5개 입니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDl-Z1-aaZ" userLabel="Info">
                                         <rect key="frame" x="16" y="2" width="382" height="21"/>
@@ -37,38 +37,38 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vKp-mW-gph">
-                                <rect key="frame" x="0.0" y="95" width="414" height="801"/>
+                                <rect key="frame" x="0.0" y="91" width="414" height="805"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="120" id="2Je-iP-aqy" customClass="ProductTableViewCell" customModule="ThrowAway" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="160" id="2Je-iP-aqy" customClass="ProductTableViewCell" customModule="ThrowAway" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Je-iP-aqy" id="drq-H1-jgB">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="TRe-x6-Zpl" userLabel="ProductImage">
-                                                    <rect key="frame" x="32" y="13" width="96" height="96"/>
+                                                    <rect key="frame" x="20" y="37.5" width="85" height="85"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="TRe-x6-Zpl" secondAttribute="height" id="ffe-Gx-iXh"/>
+                                                        <constraint firstAttribute="width" constant="85" id="Iup-BJ-LBS"/>
+                                                        <constraint firstAttribute="width" secondItem="TRe-x6-Zpl" secondAttribute="height" multiplier="1:1" id="mb5-kq-oCP"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GWG-rF-iEy">
-                                                    <rect key="frame" x="138" y="16" width="244" height="88"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GWG-rF-iEy">
+                                                    <rect key="frame" x="115" y="12" width="279" height="136"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBA-Mw-jOw" userLabel="ProductName">
-                                                            <rect key="frame" x="37.5" y="0.0" width="206.5" height="46"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="279" height="94"/>
                                                             <string key="text">이즈앤트리 어니언 뉴페어 클리어
 패드</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.10.22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wh-0L-D84" userLabel="Date">
-                                                            <rect key="frame" x="159" y="66" width="85" height="22"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022.10.22" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wh-0L-D84" userLabel="Date">
+                                                            <rect key="frame" x="0.0" y="114" width="279" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="22" id="cEV-OW-YcR"/>
-                                                                <constraint firstAttribute="width" constant="85" id="j5v-Va-peS"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.66666666666666663" green="0.68627450980392157" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,13 +78,12 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="TRe-x6-Zpl" firstAttribute="bottom" secondItem="drq-H1-jgB" secondAttribute="bottomMargin" id="5Pc-wE-SsG"/>
-                                                <constraint firstItem="GWG-rF-iEy" firstAttribute="top" secondItem="drq-H1-jgB" secondAttribute="topMargin" constant="5" id="84y-dq-5sa"/>
-                                                <constraint firstItem="TRe-x6-Zpl" firstAttribute="leading" secondItem="drq-H1-jgB" secondAttribute="leadingMargin" constant="12" id="BjX-dr-aBA"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="GWG-rF-iEy" secondAttribute="bottom" constant="5" id="Jiu-Qp-21l"/>
-                                                <constraint firstItem="GWG-rF-iEy" firstAttribute="leading" secondItem="TRe-x6-Zpl" secondAttribute="trailing" constant="10" id="Pgu-Ve-bgU"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="GWG-rF-iEy" secondAttribute="trailing" constant="12" id="UXR-xZ-Jj7"/>
-                                                <constraint firstItem="TRe-x6-Zpl" firstAttribute="top" secondItem="drq-H1-jgB" secondAttribute="topMargin" constant="2" id="zRh-Ib-X4q"/>
+                                                <constraint firstItem="GWG-rF-iEy" firstAttribute="leading" secondItem="TRe-x6-Zpl" secondAttribute="trailing" constant="10" id="GFj-6I-q65"/>
+                                                <constraint firstAttribute="bottom" secondItem="GWG-rF-iEy" secondAttribute="bottom" constant="12" id="OBk-8J-Hy3"/>
+                                                <constraint firstItem="GWG-rF-iEy" firstAttribute="top" secondItem="drq-H1-jgB" secondAttribute="top" constant="12" id="VlK-BZ-vy7"/>
+                                                <constraint firstAttribute="trailing" secondItem="GWG-rF-iEy" secondAttribute="trailing" constant="20" id="oy9-YZ-aHW"/>
+                                                <constraint firstItem="TRe-x6-Zpl" firstAttribute="centerY" secondItem="drq-H1-jgB" secondAttribute="centerY" id="pv7-fd-zFx"/>
+                                                <constraint firstItem="TRe-x6-Zpl" firstAttribute="leading" secondItem="drq-H1-jgB" secondAttribute="leading" constant="20" id="uLz-A6-zNd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

@@ -63,8 +63,7 @@ class ProductListViewController: UIViewController {
     }
     
     private func setupTableView() {
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 103
+        tableView.rowHeight = 120
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsMultipleSelectionDuringEditing = true
